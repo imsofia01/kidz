@@ -48,9 +48,9 @@
         <div class="col py-3">
             <h3>GAMES </h3>
        
-            <div class="playbtn">
-                <a href="play.php" class="game"> Play </a>
-            </div>
+            <a href="play.php">
+                <button type="submit" class="btn btn-dark "> Play </button>
+            </a>
 
 
         <body onload="main()">
