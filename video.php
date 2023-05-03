@@ -17,11 +17,10 @@
 
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-primary">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-            
-                    <span class="fs-5 d-none d-sm-inline">Menu</span>
-                </a>
+            <div class="logo"><a href=""><img src="kidss.png" width="110" height="70" style="margin-right: 10px;"></a></div>
+                   
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="home-page.php" class="nav-link align-middle px-0">
@@ -50,37 +49,21 @@
                 
             </div>
         </div>
+
+        <div class="video">
+            <h1>VIDEO </h1>
+            <br>
+           
+
+            <form action="video.php">
+            <br>    
+            <input type="file" id="myFile" name="filename">
+            <br>
+            <input type="submit">
+        </form>
         
-        <div class="col py-3">
-            <h3>VIDEO </h3>
-            <video
-            id="my-video"
-             class="video-js"
-            controls preload="auto"
-            width="640"
-            height="264"
-            poster="joji1.jpeg"
-            data-setup="{}">
-        <source src="joji.mp4" type="video/mp4" />
-        <source src="joji.webm" type="video/webm" />
-        <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      
-    </p>
-  </video>
-       
-            <div class="container">
-            <p class="lead">
-                An example 2-level sidebar with collasible menu items. The menu functions like an "accordion" where only a single 
-                menu is be open at a time. While the sidebar itself is not toggle-able, it does responsively shrink in width on smaller screens.</p>
-            <ul class="list-unstyled">
-                <li><h5>Responsive</h5> shrinks in width, hides text labels and collapses to icons only on mobile</li>
-            </ul>
-        </div>
-    </div>
-    </div>
 </div>
+
 </body>
 </html>
 
