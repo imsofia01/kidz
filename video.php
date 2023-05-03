@@ -19,9 +19,8 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-            
-                    <span class="fs-5 d-none d-sm-inline">Menu</span>
-                </a>
+            <div class="logo"><a href=""><img src="kidss.png" width="110" height="70" style="margin-right: 10px;"></a></div>
+                   
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="home-page.php" class="nav-link align-middle px-0">
@@ -50,7 +49,20 @@
                 
             </div>
         </div>
-       
+
+        <div class="video">
+            <h1>VIDEO </h1>
+            <br>
+           
+
+            <form action="video.php">
+            <br>    
+            <input type="file" id="myFile" name="filename">
+            <br>
+            <input type="submit">
+        </form>
+        
+</div>
 
 </body>
 </html>
