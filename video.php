@@ -50,37 +50,8 @@
                 
             </div>
         </div>
-        
-        <div class="col py-3">
-            <h3>VIDEO </h3>
-            <video
-            id="my-video"
-             class="video-js"
-            controls preload="auto"
-            width="640"
-            height="264"
-            poster="joji1.jpeg"
-            data-setup="{}">
-        <source src="joji.mp4" type="video/mp4" />
-        <source src="joji.webm" type="video/webm" />
-        <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      
-    </p>
-  </video>
        
-            <div class="container">
-            <p class="lead">
-                An example 2-level sidebar with collasible menu items. The menu functions like an "accordion" where only a single 
-                menu is be open at a time. While the sidebar itself is not toggle-able, it does responsively shrink in width on smaller screens.</p>
-            <ul class="list-unstyled">
-                <li><h5>Responsive</h5> shrinks in width, hides text labels and collapses to icons only on mobile</li>
-            </ul>
-        </div>
-    </div>
-    </div>
-</div>
+
 </body>
 </html>
 

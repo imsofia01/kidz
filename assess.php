@@ -15,9 +15,8 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-            
-                <span class="fs-5 d-none d-sm-inline">Menu</span>
-                </a>
+            <div class="logo"><a href=""><img src="kidss.png" width="110" height="70" style="margin-right: 10px;"></a></div>
+                
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="home-page.php" class="nav-link align-middle px-0">
@@ -51,41 +50,7 @@
             <a href="play.php">
                 <button type="submit" class="btn btn-dark "> Play </button>
             </a>
-
-
-        <body onload="main()">
-      
-    <div id="menuitems">
-        <div id="menu">
-            <div id="controls">
-               
-                <br>
-                <br>
-                Difficulty <select id="difficulty" onchange="setDifficulty()">
-                    <option value="easy"> Easy </option>
-                    <option value="medium"> Medium </option>
-                    <option value="hard"> Hard </option>
-                </select>
-                
-                <button onclick="Restart()"> Start </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="endScreen">
-        <div id="scoreValue"></div>
-        <input type="text" id="name" placeholder="your name"></input>
-        <button onclick="saveScore()" id="saveBtn"> Save </button>
-            <br>
-            <br>
-            <button onclick="showScores()"> Scores </button>
-            <button onclick="showMenu"> Menu </button>   
-</div>
-    <div id="scoreScreen">
-        <div id="scoreContainer"></div>
-        <br>
-        <button onclick="closeScore()"> Back </button>
-
+     
 </body>
 </html>
 

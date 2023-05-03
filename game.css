@@ -1,0 +1,22 @@
+.bg{
+    background-color: #a3d0fd;
+}
+h1{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#controls{
+    background: rgb(25, 142, 209);
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    margin-left: 30%;
+    margin-top: 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+#difficulty{
+    text-align: center;
+}
