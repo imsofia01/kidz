@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+}
+body{
+    margin: 0;
+    font-size: 16px;
+    background-color: #360568;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+
+}
+
+
+/* question css */
+.custom-box{
+    max-width: 700px;
+    background-color: #93FF96;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+.custom-box::before,
+.custom-box::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.custom-box.hide{
+    display: none;
+}
+
+/* instruction start */
+.home-box h3{
+    max-width: 700px;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 25px;
+
+}
+
+.home-box p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 22px;
+    color: #000000;
+    font-weight: 400;
+}
+.home-box p span{
+    font-weight: 500;
+
+}
+.home-box .btn{
+    margin-top: 20px;
+
+}
+.btn{
+    padding: 15px 45px;
+    background-color: #01fe49;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.assess-box .tanong-bilang,
+.assess-box .tanong-text,
+.assess-box .option-container,
+.assess-box .sunod-tanong-btn,
+.assess-box .sagot-indicator{
+ width: 100%;
+ float: left;
+}
+.assess-box .tanong-bilang{
+    font-size: 20px;
+    color: #0088ff;
+    font-weight: 600;
+    border-bottom: 1px solid #cd8ccd;
+    padding-bottom: 10px;
+    line-height: 25px;
+}
+.assess-box .tanong-text{
+    font-size: 22px;
+    color: #000000;
+    line-height: 28px;
+    font-weight: 400;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.assess-box .option-container .option{
+    background-color: #cccccc;
+    padding: 13px 15px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+
+}
+    
+.assess-box .btn{
+    margin: 10px 0;
+}
+.assess-box .sagot-indicator{
+    border-top: 1px solid #cd8ccd;
+}
+.assess-box .sagot-indicator div{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-color: #0088ff;
+    border-radius: 50%;
+    margin-right: 3px;
+    margin-top: 15px;
+
+}
+
+.result-box{
+    text-align: center;
+}
+.result-box.hide{
+    display: none;
+}
+
+.result-box h1{
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+}
+.result-box table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+.result-box table td{
+    border: 1px solid #000000;
+    padding: 8px 15px;
+    font-weight: 500; 
+    color: #000000;
+    width: 50%;
+    font-size: 18px;
+}
+.result-box .btn{
+    margin-right: 20px;
+}
+

@@ -1,3 +1,13 @@
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+
+  }
+};
+
+xmlhttp.open("GET", "server.php", true);
+xmlhttp.send();
+
 const seachInput = document.getElementById("#seach");
 const rows = document.querySelectorAll("table, tr, th");
 console.log(rows);
@@ -32,3 +42,4 @@ const filteredData = data.filter(function(item) {
   });
   
   console.log(filteredData);
+

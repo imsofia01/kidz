@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    font-size: 16px;
+    background-image: url(../pics/Bee-Kids.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: '', sans-serif;
+    font-weight: 400;
+
+}
+.btn{
+    padding: 15px 45px;
+    background-color: #01fe49;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* drag box css */
+.container-box .imahe{
+    font-size: 1.3em;
+    color: #0088ff;
+    font-weight: 600;
+    border-bottom: 1px solid #cd8ccd;
+    padding-bottom: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 0.05em;
+    line-height: 0.8em;
+   
+}
+.custom-box{
+    max-width: 700px;
+    background-color: #93FF96;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    
+}
+
+
+/* drag & drop CSS */
+
+.draggable-element,
+.droppable-points {
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem;
+    
+}
+
+.draggable {
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    margin: 0rem 0.5rem;
+    cursor: move;
+    transition: opacity 0.5s;
+}
+
+.draggable:hover {
+    opacity: 0.5;
+}
+
+.droppable {
+    height: 6.5rem;
+    width: 7.5rem;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #ffffff;
+    border: 3px dashed #111;
+    transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+    padding: 1rem auto;
+}
+
+.droggable span {
+    font-size: 1.25rem;
+    pointer-events: none;
+}
+
+.dropped-incorrectly {
+    background-color: red;
+  }
+  
+
+/* Drag and Drop Related Styling */
+
+.droppable.droggable-hover{
+    border-width: 5px;
+    transform: scale(1.1);
+}
+.droppable.draggable
+.hide {
+    display: none;
+    cursor: move;
+}
+
+img {
+    width: 8em;
+    filter: drop-shadow(0 0.3em 0.9em rgba(0, 0, 0, 0.25));
+
+}
+
+
+
+ 
+
+
+
+
+
+
