@@ -45,6 +45,7 @@ body{
 }
 .custom-box{
     max-width: 700px;
+    max-height: 900px;
     background-color: #93FF96;
     margin: 40px auto;
     padding: 30px;
@@ -88,7 +89,7 @@ body{
     align-items: center;
     flex-direction: column;
     text-align: center;
-    font-size: 2rem;
+    font-size: 23px;
     font-weight: bold;
     background-color: #ffffff;
     border: 3px dashed #111;
@@ -99,6 +100,7 @@ body{
 .droggable span {
     font-size: 1.25rem;
     pointer-events: none;
+    
 }
 
 .dropped-incorrectly {

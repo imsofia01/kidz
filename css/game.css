@@ -1,6 +1,70 @@
 .bg{
-    background-color: #a3d0fd;
+    background-color: #C9A7EB;
 }
+
+
+.bg {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    background-color: #fff279;
+  }
+.title{
+    position: relative;
+    align-items: center;
+}
+
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #3C486B;
+    position: fixed;
+    height: 200%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: #F0F0F0;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+   
+  .sidebar a.active {
+    background-color: #023144;
+    color: rgb(255, 255, 255);
+  }
+  
+
+.sidebar a:hover:not(.logo-menu) {
+    background-color: #000000;
+    color: white;
+}
+
+  .logo-menu {
+    background-image: url(../pics/kids.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+  div#content {
+    color: white ;
+    margin-left: 200px;
+    padding: 0px 50px;
+    padding-top: 16px;
+    height: 260px;
+    background-color: rgb(25, 104, 135);
+  }
+
+  div.player{
+    color: white ;
+    margin-left: 200px;
+    padding: 0px 50px;
+    padding-top: 16px;
+    height: 260px;
+    background-color: rgb(25, 104, 135);
+  }
 
 
 h1{
@@ -9,7 +73,6 @@ h1{
     
 }
 
-
 #controls{
     background: rgb(25, 142, 209);
     width: 500px;
@@ -17,11 +80,14 @@ h1{
     text-align: center;
     margin-left: 20%;
     margin-top: 5%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    
+    font-family: Georgia, 'Times New Roman', Times, serif;  
 }
-
 
 #difficulty{
     text-align: center;
+}
+.nav {
+    font-size: 20px; 
+    font-weight: bold;
+    padding: 2px;
 }
