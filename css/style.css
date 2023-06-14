@@ -5,8 +5,8 @@ body{
     justify-content: center;
     align-items: center;
     display: flex;
-    background-color: 	#99ccff;
-    background-image: url('book.gif');
+    background-color: 	#ffd93d;
+    background-image: url('../pics/book.gif');
     background-size: cover;
     background-repeat: no-repeat;
 }
