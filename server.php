@@ -23,7 +23,7 @@
      <br>
      <form action="" method="GET">
      <div class="input-group mb-3">
-    <input type="text" name ="search" id="search"<?php if(isset($_GET['search'])){echo $_GET['search'];}?>" class="form-control" placeholder="Search">
+    <input type="text" name ="search" id="search"<?php if(isset($_GET['search'])){echo $_GET['search'];}?> class="form-control" placeholder="Search">
      <button type="submit" class="btn btn-dark "> Search</button>
     </div>
      <table class="table" id="urTable">
@@ -98,15 +98,7 @@ if ($result->num_rows > 0) {
 <!-- Javascript -->
 <script type="text/javascript">
 
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
 
-  }
-};
-
-xmlhttp.open("GET", "server.php", true);
-xmlhttp.send();
 
 const seachInput = document.getElementById("#seach");
 const rows = document.querySelectorAll("table, tr, th");

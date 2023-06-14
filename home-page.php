@@ -10,9 +10,8 @@
   <title>2D INTERACTIVE</title>
 </head>
 <body class="bg">
-
-<div class="sidebar">
-        <a class="logo-menu">
+  <div class="sidebar">
+      <a class="logo-menu">
         <img src="pics/kidss.png" width="170" height="90" style="margin-right: 20px;"> </a>
         
             <a class="active" href="index.php"> <span class="fa fa-home"> </span>  Home</a>
@@ -23,13 +22,19 @@
      </div>
 </div>
 
-
-<div class="content">
+<div class="content"> 
+<main class="container">
+  <section class="panel-1">
+    <h1>Panel 1</h1>
+  </section>
+  <br>
+  <br>
   <br>
   <h2>Responsive Sidebar Example</h2>
   <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
   <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
   <h3>Resize the browser window to see the effect.</h3>
+</main>
 </div>
 </body>
 </html>

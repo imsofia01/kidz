@@ -1,7 +1,9 @@
+body,html {
+  overflow-x:hidden;
+}
 .bg {
     margin: 0;
     font-family: "Lato", sans-serif;
-    background-color: #97DEFF;
   }
 .title{
     position: relative;
@@ -48,8 +50,27 @@
     margin-left: 200px;
     padding: 0px 50px;
     padding-top: 16px;
-    height: 260px;
+    height: 500vh;
     background-color: rgb(25, 104, 135);
   }
-
+/* Panel div*/
+section {
+  margin-top: 3%;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height: 80vh;
+}
+.panel-1 {
+background:#423E3B;  
+}
+.panel-2 {
+  background:#88498F;
+}
+h1 {
+    font-size:4rem;
+}
+h2{
+  text-align: center;
+}
   
