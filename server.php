@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-fit-no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -34,17 +33,12 @@
                 <th> Time </th>
                 <th>Difficulty </th>
                 <th> Action </th>
-            </tr>
-
-            
-            
+            </tr>       
             
 </body>
 </html>
 
 <?php
-
-
 
 $dbhost = "localhost";
 $dbuser = "root";
@@ -59,6 +53,21 @@ $conn =  new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+// Check if a delete action is requested
+if (isset($_GET['search']) && $_GET['search'] == 'delete' && isset($_GET['id'])) {
+  $id = $_GET['id'];
+  
+  // Delete the record from the database
+  $deleteQuery = "DELETE FROM gamescore WHERE id = $id";
+  if ($conn->query($deleteQuery) === TRUE) {
+      echo "Record deleted successfully.";
+  } else {
+      echo "Error deleting record: " . $conn->error;
+  }
+}
+
+
 $sql = "SELECT id, username, time, difficulty FROM gamescore";
     $result = $conn->query($sql);
 
@@ -100,39 +109,39 @@ if ($result->num_rows > 0) {
 
 
 
-const seachInput = document.getElementById("#seach");
-const rows = document.querySelectorAll("table, tr, th");
-console.log(rows);
+// const seachInput = document.getElementById("#seach");
+// const rows = document.querySelectorAll("table, tr, th");
+// console.log(rows);
 
-seachInput.addEventListener('keyup',function(event) {
-    // console.log(event);
+// seachInput.addEventListener('keyup',function(event) {
+//     // console.log(event);
 
-});
+// });
 
-rows.forEach(function(row) {
-    const cells = row.querySelectorAll('tr');
-    let found = false;
-    cells.forEach(function(cell) {
-      const text = cell.innerText.toLowerCase();
-      if (text.indexOf(searchTerm) > -1) {
-        found = true;
-      }
-    });
-    if (found) {
-      row.style.display = '';
-    } else {
-      row.style.display = 'none';
-    }
-  });
+// rows.forEach(function(row) {
+//     const cells = row.querySelectorAll('tr');
+//     let found = false;
+//     cells.forEach(function(cell) {
+//       const text = cell.innerText.toLowerCase();
+//       if (text.indexOf(searchTerm) > -1) {
+//         found = true;
+//       }
+//     });
+//     if (found) {
+//       row.style.display = '';
+//     } else {
+//       row.style.display = 'none';
+//     }
+//   });
   
-const data = ['$sql'];
+// const data = ['$sql'];
 
-const searchTerm = ['tr, td'];
+// const searchTerm = ['tr, td'];
 
-const filteredData = data.filter(function(item) {
-    return item.name.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+// const filteredData = data.filter(function(item) {
+//     return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+//   });
   
-  console.log(filteredData);
+//   console.log(filteredData);
 
 </script>

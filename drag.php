@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
     <link rel="stylesheet" href="css/dragObject.css">
     <title>Document</title>
 </head>
 
 <body>
     
-<div class="home-box custom-box hide">
+<div class="home-box custom-box ">
         <h2> Pagsusulit  </h2>
         <p> Bilang ng mga Tanong: <span class="tanong"> </span></p>
-        <button type="button" class="btn" onclick="simulaQuiz()"> Simula </button>
+        <button id="btn" type="button" class="btn" onclick="simulaQuiz()"> Simula </button>
     </div>
 
   <!-- drag box w/ picture -->
-  <div  id="container-box-1" class="container-box custom-box">
+  <div  id="container-box-1" class="container-box custom-box hide">
         <div class="tanong-bilang">
            
         </div>
@@ -35,18 +35,17 @@
         </div>
 
         <div class="sunod-tanong-btn">
-        <button id="myBtn" type="button" class="btn" onclick="sunod()"> Sunod </button>
+        <button id="btn" type="button" class="btn" onclick="sunod()"> Sunod </button>
+        
       </div>
       <br>
-    
        <div class="sagot-indicator">
-          
         </div>
   </div>
   
         <div id="container-box-2" class="container-box custom-box hide ">
         <div class="tanong-bilang">
-          <h2> Mga Imahe <span id="question-number">1</span></h2>
+          
            </div>
         <div class="draggable-element">
         <img class="draggable" draggable="true" src="pics/Aso.jpg" id="Aso"> </img>
@@ -54,31 +53,34 @@
         <img class="draggable" draggable="true" src="pics/ibon.jpg" id="Ibon"> </img>
         </div>
         <div class="droppable-points">
-            <div class="droppable" data-draggable-id="aso"> <span> Aso </span> </div> 
+            <div class="droppable" data-draggable-id="Aso"> <span> Aso </span> </div> 
             <div class="droppable" data-draggable-id="Paru-paro"> <span> Paru-paro </span> </div>
-            <div class="droppable" data-draggable-id="ibon"> <span> Ibon </span> </div>
+            <div class="droppable" data-draggable-id="Ibon"> <span> Ibon </span> </div>
         </div>
         <div class="controls-container">
             <div id="result"> </div>
-            <button id="start" class="btn"> Simula </button>
+            <button id="btn" type="button" class="btn" onclick="sunod()"> Sunod </button>
         </div>
   
 
 <script src="js/images.js"></script>
 <script type="text/javascript">
 
+
+const container =document.querySelector("#container-box-1");
+const containerBox =document.querySelector("#container-box-2");
+const homeBox = document.querySelector(".home-box");
+const quizBox = document.querySelector(".container-box");
+const nextBtn = document.getElementById('myBtn');
 const answersIndicatorContainer = document.querySelectorAll(".sagot-indicator");
 const sagotIndicator = document.querySelector('.sagot-indicator');
+
+let availableQuestions = [];
+
 
 // Get all draggable elements
 const draggableElements = document.querySelectorAll('.draggable');
 
-
-// Function to update the question number
-function updateQuestionNumber(number) {
-  const questionNumberElement = document.getElementById('question-number');
-  questionNumberElement.innerText = number;
-}
 // Add event listeners to enable dragging
   draggableElements.forEach((element) => {
     element.addEventListener('dragstart', (e) => {
@@ -109,6 +111,7 @@ droppableElements.forEach((element) => {
       draggableElement.classList.add('correct');
       element.classList.add('correct');
       console.log('Correct answer!');
+
     } else {
       // Wrong answer
       draggableElement.classList.add('wrong');
@@ -124,16 +127,31 @@ droppableElements.forEach((element) => {
 
     }
 
-
     element.appendChild(draggableElement);
 
-  
-
-
-
-
 });
 });
+
+
+
+function sunod() {
+
+  // Reset the draggable elements and droppable elements to their initial state
+  container.classList.add("hide");
+
+  containerBox.classList.remove("hide");
+
+  console.log('Next button clicked!');
+}
+
+function simulaQuiz() {
+
+// HIDE HOME BOX 
+    homeBox.classList.add("hide");
+    // show quiz box
+    quizBox.classList.remove("hide");
+}
+
 
 
 </script>
