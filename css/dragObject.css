@@ -54,7 +54,7 @@ body{
 }
 
 
-.btn{
+#btn{
     padding: 15px 45px;
     background-color: #01fe49;
     border: none;
@@ -141,7 +141,7 @@ body{
     line-height: 25px;
 }
 
-.home-box .btn{
+.home-box #btn{
     margin-top: 20px;
     padding: 15px 45px;
     background-color: #01fe49;
