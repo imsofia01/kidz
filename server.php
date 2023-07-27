@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="board.css">
+    <link rel="stylesheet" href="css/board.css">
     
     <title>Document</title>
 
@@ -14,14 +14,15 @@
 </head>
 <a href="home-page.php">
                      
-<button type="submit" class="btn btn-dark "> Home </button>
+<button type="submit" class="btn btn-primary "> Home </button>
+
 </a>
 <body class ="bggs" style="margin: 50px;">
      <h1> Leaderboard </h1>
      <br>
      <form action="" method="GET">
      <div class="input-group mb-3">
-    <input type="text" name ="search" id="search"<?php if(isset($_GET['search'])){echo $_GET['search'];}?>" class="form-control" placeholder="Search">
+    <input type="text" name ="search" id="search"<?php if(isset($_GET['search'])){echo $_GET['search'];}?> class="form-control" placeholder="Search">
      <button type="submit" class="btn btn-dark "> Search</button>
     </div>
      <table class="table" id="urTable">
@@ -32,10 +33,7 @@
                 <th> Time </th>
                 <th>Difficulty </th>
                 <th> Action </th>
-            </tr>
-
-            
-            <script src="script.js" type="text/javascript"></script>
+            </tr>       
             
 </body>
 </html>
@@ -55,13 +53,29 @@ $conn =  new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+// Check if a delete action is requested
+if (isset($_GET['search']) && $_GET['search'] == 'delete' && isset($_GET['id'])) {
+  $id = $_GET['id'];
+  
+  // Delete the record from the database
+  $deleteQuery = "DELETE FROM gamescore WHERE id = $id";
+  if ($conn->query($deleteQuery) === TRUE) {
+      echo "Record deleted successfully.";
+  } else {
+      echo "Error deleting record: " . $conn->error;
+  }
+}
+
+
 $sql = "SELECT id, username, time, difficulty FROM gamescore";
     $result = $conn->query($sql);
+
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo 
+      echo
       "<tr>
        <td>".$row["id"]. "</td>
        <td>". $row["username"]."</td>
@@ -85,6 +99,49 @@ if ($result->num_rows > 0) {
   }
     $conn->close();
 
+    $response = array('message' => 'Hello from PHP!');
+    echo json_encode($response);
 
 ?>
 
+<!-- Javascript -->
+<script type="text/javascript">
+
+
+
+// const seachInput = document.getElementById("#seach");
+// const rows = document.querySelectorAll("table, tr, th");
+// console.log(rows);
+
+// seachInput.addEventListener('keyup',function(event) {
+//     // console.log(event);
+
+// });
+
+// rows.forEach(function(row) {
+//     const cells = row.querySelectorAll('tr');
+//     let found = false;
+//     cells.forEach(function(cell) {
+//       const text = cell.innerText.toLowerCase();
+//       if (text.indexOf(searchTerm) > -1) {
+//         found = true;
+//       }
+//     });
+//     if (found) {
+//       row.style.display = '';
+//     } else {
+//       row.style.display = 'none';
+//     }
+//   });
+  
+// const data = ['$sql'];
+
+// const searchTerm = ['tr, td'];
+
+// const filteredData = data.filter(function(item) {
+//     return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+//   });
+  
+//   console.log(filteredData);
+
+</script>

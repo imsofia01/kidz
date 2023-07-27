@@ -1,0 +1,76 @@
+body,html {
+  overflow-x:hidden;
+}
+.bg {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+.title{
+    position: relative;
+    align-items: center;
+}
+
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #3C486B;
+    position: fixed;
+    height: 200%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: #F0F0F0;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+   
+  .sidebar a.active {
+    background-color: #023144;
+    color: rgb(255, 255, 255);
+  }
+  
+
+.sidebar a:hover:not(.logo-menu) {
+    background-color: #000000;
+    color: white;
+}
+
+  .logo-menu {
+    background-image: url(../pics/kids.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  
+  div.content {
+    color: white ;
+    margin-left: 200px;
+    padding: 0px 50px;
+    padding-top: 16px;
+    height: 500vh;
+    background-color: rgb(25, 104, 135);
+  }
+/* Panel div*/
+section {
+  margin-top: 3%;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height: 80vh;
+}
+.panel-1 {
+background:#423E3B;  
+}
+.panel-2 {
+  background:#88498F;
+}
+h1 {
+    font-size:4rem;
+}
+h2{
+  text-align: center;
+}
+  
