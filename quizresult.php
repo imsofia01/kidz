@@ -5,8 +5,7 @@
   // for table to insert results quiz
   // require_once('sample.php');
   
-  $query = "SELECT * FROM player_name";
-  $result = mysqli_query($conn,$query);
+ 
 
 //   if (isset($_POST['total_tanong']) || isset($_POST['total_attempts']) || isset($_POST['total_correct']) || isset($_POST['total_wrong']) || isset($_POST['percentage']) )
 //   {
@@ -48,13 +47,15 @@
   <h1> Talaan ng Nangunguna </h1>
     <br>
 
-<form action="" method="GET">
+    <form action="deleteQresult.php" method="post">
   <div class="input-group mb-3">
     <input type="text" name ="search" id="search"<?php if(isset($_GET['search'])){echo $_GET['search'];}?> class="form-control" placeholder="Search">
      <button type="submit" class="btn btn-secondary "> Search</button>
       </div>
+      <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i>Delete</button>
         <table class="table table-bordered text-center" id="urTable">
           <tr class="bg-secondary text-white"> 
+          <th> alisin </th>
             <th>Pangalan</th>
             <th> Edad</th>
             <th> Kasarian </th>
@@ -64,14 +65,16 @@
             <th> Maling sagot </th>
             <th> Percentage </th>
             <th> Puntos </th>
-            <th> alisin </th>
+           
         </tr> 
       <tr>
     <?php
+     $query = "SELECT * FROM player_name";
+     $result = mysqli_query($conn,$query);
          while ($row = mysqli_fetch_assoc($result)) 
         {
       ?>
-
+<td> <input type="checkbox" value="<?php echo $row['id']; ?>" name="id[]"> </td>
     <td> <?php echo $row['username'];?> </td>
     <td> <?php echo $row['edad'];?> </td>
     <td> <?php echo $row['kasarian'];?> </td>
@@ -81,7 +84,7 @@
     <td> <?php echo $row['total_wrong'];?> </td>
     <td> <?php echo $row['percentage'];?> % </td>
     <td> <?php echo $row['puntos'];?> </td>
-    <td> <a href="#" class="btn btn-danger"> Alisin </a> </td>
+  
                   
     </tr>  
     <?php                    
@@ -90,7 +93,8 @@
   // header("location: sample.php");
             
   ?> 
-
+</table>
+</form>
             
 </body>
 </html>
