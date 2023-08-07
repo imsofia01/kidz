@@ -79,7 +79,7 @@
     <td> <?php echo $row['total_attempts'];?> </td>
     <td> <?php echo $row['total_correct'];?> </td>
     <td> <?php echo $row['total_wrong'];?> </td>
-    <td> <?php echo $row['percentage'];?> </td>
+    <td> <?php echo $row['percentage'];?> % </td>
     <td> <?php echo $row['puntos'];?> </td>
     <td> <a href="#" class="btn btn-danger"> Alisin </a> </td>
                   

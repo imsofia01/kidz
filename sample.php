@@ -69,31 +69,31 @@ $resultCheck = mysqli_num_rows($result);
             <table>
                 <tr>
                     <td> <label for="total_tanong"> Bilang ng Tanong </label> </td>
-                    <td><input class="total-tanong" type="text" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" name="total_tanong" id="quizResultsInput"> </td>
+                    <td><span class="total-tanong" type="hidden" <?php echo isset($_POST['totalTanong']) ? htmlspecialchars($_POST['totalTanong']) : ''; ?> name="total_tanong" id="quizResultsInput"></span> </td>
                 </tr>
                 <tr>
-                    <td> <label for="total_attempts"> Tangka</label></td>
-                    <td><input class="total-attempt" type="text" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" name="tanka" id="quizResultsInput"></td>
+                    <td> <span for="total_attempts"> Tangka</label></td>
+                    <td><span class="total-attempt" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="tanka" id="quizResultsInput"></span></td>
                     
                 </tr>
                 <tr>
-                    <td> <label for="total_correct"> Tamang sagot</label> </td>
-                    <td><input class="total-correct" type="hidden" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" name="quiz_results" id="quizResultsInput"></td>
+                    <td> <span for="total_correct"> Tamang sagot</label> </td>
+                    <td><span class="total-correct" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span></td>
                     
                 </tr>
                 <tr>
                     <td> <label for="total_wrong"> Maling sagot </label>  </td>
-                    <td><input class="total-wrong" type="text" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" name="quiz_results" id="quizResultsInput"> </td>
+                    <td><span class="total-wrong" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span> </td>
                     
                 </tr>
                 <tr>
                     <td> <label for="percentage"> Percentage </label> </td>
-                    <td><input class="percentage" type="text" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" name="quiz_results" id="quizResultsInput"> </td>
+                    <td><span class="percentage" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span> </td>
                     
                 </tr>
                 <tr>
                     <td> Kabuuang sagot </td>
-                    <td><input class="total-puntos" type="text" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>" name="quiz_results" id="quizResultsInput"></td>
+                    <td><span class="total-puntos" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span></td>
                     
                 </tr> 
             </table>
@@ -295,10 +295,29 @@ function quizResult(){
     };
 }   
 
+// Inside your existing code
 function saveQuizResults() {
-    const quizResults = quizResult(); // Your existing quizResult() function
+    const quizResults = quizResult();
     document.getElementById("quizResultsInput").value = JSON.stringify(quizResults);
+
+    // Send quiz results to the server using AJAX
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "save_results.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText); // You can handle the server's response here
+            } else {
+                console.error("Error saving quiz results");
+            }
+        }
+    };
+    
+    const formData = `quizResults=${JSON.stringify(quizResults)}`;
+    xhr.send(formData);
 }
+
 
 
 function resetQuiz() {
