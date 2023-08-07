@@ -8,8 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    
-
     <!-- mga tanong -->
     <div class="home-box custom-box">
         <h2> Pagsusulit  </h2>
