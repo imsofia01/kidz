@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    font-size: 16px;
+    background-color: #360568;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+
+}
+
+.gradient-custom {
+
+background: rgb(114, 35, 189);
+background: linear-gradient(135deg, rgb(123, 46, 195), rgb(73, 21, 156));
+}
+
+
+.saveName.hide{
+    display: none;
+}
+
+@media(max-width: 767px){
+    .content .btn{
+        margin-bottom: 15px;
+    }
+    body{
+        padding: 15px;
+    }
+}

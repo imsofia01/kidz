@@ -17,15 +17,15 @@
             <a class="active" href="index.php"> <span class="fa fa-home"> </span>  Home</a>
             <a href="video.php"> <span class="fa fa-video-camera"> </span>  2D Video Lesson</a>
             <a href="assess.php"><span class="fa fa-folder"> </span> Assessment</a>
-            <a href="server.php"><span class="fa fa-trophy"> </span> Leaderboard</a>
+            <a href="quizresult.php"><span class="fa fa-trophy"> </span> Leaderboard</a>
         </div>
      </div>
 </div>
 
 <div class="content"> 
 <main class="container">
-  <section class="panel-1">
-    <h1>Panel 1</h1>
+    <h1>About</h1>
+    <p> the author</p>
   </section>
   <br>
   <br>

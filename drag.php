@@ -18,9 +18,9 @@
     </div>
 
   <!-- drag box w/ picture -->
-  <div  id="container-box-1" class="container-box custom-box hide">
+  <div  id="container-box-1" class="container-box custom-box hide" >
         <div class="tanong-bilang">
-           
+    
         </div>
         <div class="draggable-element">
           <img class="draggable" draggable="true" src="pics/girl.jpg" id="Babae"> </img>
@@ -28,7 +28,7 @@
           <img class="draggable" draggable="true" src="pics/kamay.png" id="Kamay"> </img>
         </div>
 
-        <div class="droppable-points">
+        <div class="droppable-points" id="drop">
           <div class="droppable" data-draggable-id="Lalaki"> <span> Lalaki </span> </div> 
           <div class="droppable" data-draggable-id="Kamay"> <span> Kamay </span> </div>
           <div class="droppable" data-draggable-id="Babae"> <span> Babae </span> </div>
@@ -43,7 +43,7 @@
         </div>
   </div>
   
-        <div id="container-box-2" class="container-box custom-box hide ">
+        <div id="container-box-2" class="container-box custom-box hide">
         <div class="tanong-bilang">
           
            </div>
@@ -52,7 +52,7 @@
         <img class="draggable" draggable="true" src="pics/paru-paro.jpg" id="Paru-paro"> </img>
         <img class="draggable" draggable="true" src="pics/ibon.jpg" id="Ibon"> </img>
         </div>
-        <div class="droppable-points">
+        <div class="droppable-points" id="drop">
             <div class="droppable" data-draggable-id="Aso"> <span> Aso </span> </div> 
             <div class="droppable" data-draggable-id="Paru-paro"> <span> Paru-paro </span> </div>
             <div class="droppable" data-draggable-id="Ibon"> <span> Ibon </span> </div>
@@ -63,10 +63,11 @@
         </div>
   
 
-<script src="js/images.js"></script>
+<!-- <script src="js/images.js"></script> -->
 <script type="text/javascript">
 
-
+const customBox = document.querySelector(".custom-box")
+const dropNumber = document.querySelector(".tanong-bilang");
 const container =document.querySelector("#container-box-1");
 const containerBox =document.querySelector("#container-box-2");
 const homeBox = document.querySelector(".home-box");
@@ -75,7 +76,13 @@ const nextBtn = document.getElementById('myBtn');
 const answersIndicatorContainer = document.querySelectorAll(".sagot-indicator");
 const sagotIndicator = document.querySelector('.sagot-indicator');
 
-let availableQuestions = [];
+// let availableQuestions = [];
+let questionCounter = 0;
+let results = [];
+
+function getNewQuestion(){
+  dropNumber.innerHTML = "Tanong " + (questionCounter + 1) + " hanggang " + containerBox;
+}
 
 
 // Get all draggable elements
@@ -85,12 +92,14 @@ const draggableElements = document.querySelectorAll('.draggable');
   draggableElements.forEach((element) => {
     element.addEventListener('dragstart', (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
-    console.log(draggableElements)
+
+    //console.log(draggableElements)
   });
 });
 
 // Get all droppable elements
 const droppableElements = document.querySelectorAll('.droppable');
+
 
 // Add event listeners to enable dropping
 droppableElements.forEach((element) => {
@@ -104,9 +113,10 @@ droppableElements.forEach((element) => {
     const draggableId = e.dataTransfer.getData('text/plain');
     const draggableElement = document.getElementById(draggableId);
     const expectedAnswer = element.getAttribute('data-draggable-id');
+    const isCorrect = draggableId === expectedAnswer;
     
     
-    if (draggableId === expectedAnswer) {
+    if (isCorrect) {
       // Correct answer
       draggableElement.classList.add('correct');
       element.classList.add('correct');
@@ -124,32 +134,39 @@ droppableElements.forEach((element) => {
       // An answer has already been placed, handle accordingly (e.g., display an error message)
       console.log('An answer has already been placed in the droppable element.');
       return;
-
+    
     }
+    
+    element.appendChild(draggableElement);  
+    
 
-    element.appendChild(draggableElement);
+      // Store the result in the results array
+      results.push(isCorrect);
+  
+
+
 
 });
 });
-
-
 
 function sunod() {
+  
+ 
+    container.classList.add("hide");
+    containerBox.classList.remove("hide");
 
-  // Reset the draggable elements and droppable elements to their initial state
-  container.classList.add("hide");
+    console.log('Next button clicked!');
+ 
+  }
 
-  containerBox.classList.remove("hide");
 
-  console.log('Next button clicked!');
-}
 
 function simulaQuiz() {
 
 // HIDE HOME BOX 
     homeBox.classList.add("hide");
     // show quiz box
-    quizBox.classList.remove("hide");
+    container.classList.remove("hide");
 }
 
 

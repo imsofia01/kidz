@@ -32,7 +32,7 @@
                 <button type="submit" class="btn btn-dark "> Play </button>
             </a>
 
-            <a href="sample.php">
+            <a href="savenames.php">
                 <button type="submit" class="btn btn-dark "> Tanong </button>
             </a>
 

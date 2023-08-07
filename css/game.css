@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@500&family=Montserrat:wght@500;600&family=Rubik+Puddles&display=swap');
 .bg{
     background-color: #C9A7EB;
 }
@@ -6,8 +9,89 @@
 .bg {
     margin: 0;
     font-family: "Lato", sans-serif;
-    background-color: #fff279;
+    background-color: #02c9e3;
   }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+}
+.custom-box{
+
+    max-width: 900px;
+    background-color: #93FF96;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    animation: fadeInRight 1s ease;
+}
+
+.custom-box::before,
+.custom-box::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.custom-box.hide{
+    display: none;
+}
+
+.btn{
+  padding: 15px 45px;
+  background-color: #4349a0;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+
+.result-box{
+  text-align: center;
+}
+.result-box.hide{
+  display: none;
+}
+
+.result-box h1{
+  align-items: center;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000000;
+}
+.result-box table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+}
+.result-box table td{
+  border: 1px solid #000000;
+  padding: 8px 15px;
+  font-weight: 500; 
+  color: #000000;
+  width: 50%;
+  font-size: 18px;
+}
+.result-box .btn{
+  margin-right: 20px;
+}
+
+
+@media(max-width: 767px){
+    .result-box .btn{
+        margin-bottom: 15px;
+    }
+    body{
+        padding: 15px;
+    }
+}
+
+
 .title{
     position: relative;
     align-items: center;

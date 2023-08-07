@@ -1,3 +1,39 @@
+<?php
+// Start a PHP session to store data across pages
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Process the form data here
+// Create connection
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "scores";
+
+// Create a database connection
+$conn = new mysqli($host, $username, $password, $database);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+} else {
+  echo "connected";
+}
+
+if (isset($_POST['total_tanong']) || isset($_POST['total_attempts']) || isset($_POST['total_correct']) || isset($_POST['total_wrong']) || isset($_POST['percentage']) )
+ {
+    $total_tanong = $_POST['total_tanong'];
+    $total_attempts = $_POST['total_attempts'];
+    $total_correct = $_POST['total_correct'];
+    $total_wrong = $_POST['total_wrong'];
+    $percentage = $_POST['percentage'];
+
+// Create the SQL INSERT query
+$result = "INSERT INTO player_name WHERE (total_tanong, total_attempts, total_correct, total_wrong, percentage) VALUES ('$total_tanong', '$total_attempts', '$total_correct', '$total_wrong', '$percentage')";
+$data = mysqli_query($conn,$result);
+
+}
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,63 +48,42 @@
 </head>
 <body class="bg">
 
-<div class="sidebar">
-        <a class="logo-menu">
-        <img src="pics/kidss.png" width="170" height="90" style="margin-right: 20px;"> </a>
-        
-            <a class="active" href="index.php"> <span class="fa fa-home"> </span>  Home</a>
-            <a href="video.php"> <span class="fa fa-video-camera"> </span>  2D Video Lesson</a>
-            <a href="assess.php"><span class="fa fa-folder"> </span> Assessment</a>
-            <a href="server.php"><span class="fa fa-trophy"> </span> Leaderboard</a>
+<form action="quizresult.php" class="results" id="formData" method="POST">
+        <div class="result-box custom-box">
+            <h1> Assessment Result </h1>
+            <table>
+                <tr>
+                    <td> <label for="total_tanong"> Bilang ng Tanong </label> </td>
+                    <td><span class="total-tanong" <?php echo isset($_POST['total_tanong']) ? htmlspecialchars($_POST['total_tanong']) : ''; ?> name="total_tanong"></span> </td>
+                </tr>
+                <tr>
+                    <td> <label for="total_attempts"> Tangka</label></td>
+                    <td><span class="total-attempt" <?php echo isset($_POST['total_attempts']) ? htmlspecialchars($_POST['total_attempts']) : ''; ?> name="total_attempts"></span> </td>
+                </tr>
+                <tr>
+                    <td> <label for="total_correct"> Tamang sagot</label> </td>
+                    <td><span class="total-correct" <?php echo isset($_POST['total_correct']) ? htmlspecialchars($_POST['total_correct']) : ''; ?> name="total_correct"></span> </td>
+                </tr>
+                <tr>
+                    <td> <label for="total_wrong"> Maling sagot </label>  </td>
+                    <td><span class="total-wrong" <?php echo isset($_POST['total_wrong']) ? htmlspecialchars($_POST['total_wrong']) : ''; ?>name="total_wrong"></span> </td>
+                </tr>
+                <tr>
+                    <td> <label for="percentage"> Percentage </label> </td>
+                    <td><span class="percentage" <?php echo isset($_POST['percentage']) ? htmlspecialchars($_POST['percentage']) : ''; ?> name="percentage"></span> </td>
+                </tr>
+                <tr>
+                    <td> Kabuuang sagot </td>
+                    <td><span class="total-puntos"> </span></td>
+                </tr> 
+            </table>
+            <button type="button" class="btn" onclick="tryAgain()"> Subukan Ulit </button>
+            <button type="button" class="btn" onclick="backHome()"> Home </button>
+            <button type="submit" class="btn" onclick="submit()"> Save </button>
+            <form action="quizresult.php" id="formData" method="POST">   
         </div>
-     </div>
-</div>
-
-        <div class="player">
-        <h1> PLAY  </h1>
-        
-        <body onload="main()">
-        <div id="menuitems">
-        <div id="menu">
-            <div id="controls">
-                <div id="box">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                Difficulty <select id="difficulty" onchange="setDifficulty()">
-                    <option value="easy"> Easy </option>
-                    <option value="medium"> Medium </option>
-                    <option value="hard"> Hard </option>
-                </select>
-                
-                <button class="btn btn-dark" onclick="Restart()"> Start </button>
- 
-    <div id="endScreen">
-        <div id="scoreValue"></div>
-        <input type="text" id="name" placeholder="your name"></input>
-        <button class="btn btn-dark" onclick="saveScore()" id="saveBtn"> Save </button>
-            <br>
-            <br>
-            <button class="btn btn-dark" onclick="showScores()"> Scores </button>
-            <button class="btn btn-dark" onclick="showMenu"> Menu </button>   
-
-    <div id="scoreScreen">
-        <div id="scoreContainer"></div>
-        <br>
-        <button class="btn btn-dark" onclick="closeScore()"> Back </button>
-
-        </div>
-        </div>
-    </div>
- </div>
-</div>
-</div>
 </body>
+<script src="js/script.js"></script>
+<script src="js/images.js"></script>
 </html>
 
