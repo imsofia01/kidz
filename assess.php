@@ -13,33 +13,37 @@
 <body class="bg">
 
 <div class="sidebar">
-        <a class="logo-menu">
-        <img src="pics/kidss.png" width="170" height="90" style="margin-right: 20px;"> </a>
+      <a class="logo-menu">
+        <img src="pics/logo.png" width="180" height="180"> </a>
         
             <a class="active" href="home-page.php"> <span class="fa fa-home"> </span>  Home</a>
             <a href="video.php"> <span class="fa fa-video-camera"> </span>  2D Video Lesson</a>
             <a href="assess.php"><span class="fa fa-folder"> </span> Assessment</a>
-            <a href="server.php"><span class="fa fa-trophy"> </span> Leaderboard</a>
+            <a href="quizresult.php"><span class="fa fa-trophy"> </span> Leaderboard</a>
         </div>
      </div>
 </div>
+</div>
+<div class="content"> 
+<main class="container">
+       <br>
+        <div class="game py-5">
+            <h3>MGA LARO  </h3>
+            
         
-        <div id="content" class="p-2 p-md-5 pt-5">
-        <div class="col py-3">
-            <h3>GAMES </h3>
+            <a href="savenames.php" class="square_btn">Tanong </a>         
+          
        
-            <a href="play.php">
-                <button type="submit" class="btn btn-dark "> Play </button>
-            </a>
+        <!-- <a href="play.php">
+            <button type="submit" class="btn btn-dark "> Play </button>
+        </a> -->
 
-            <a href="savenames.php">
-                <button type="submit" class="btn btn-dark "> Tanong </button>
-            </a>
+         
+        <a href="drag.php" class="square_btn">Drag Pictures</a>              
+            
 
-            <a href="drag.php">
-                <button type="submit" class="btn btn-dark "> Drag Pictures </button>
-            </a>
-     
+            </main>
+    </div>
 </body>
 </html>
 

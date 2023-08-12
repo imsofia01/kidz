@@ -1,4 +1,7 @@
-
+body,html {
+  margin: 0;
+  height: 100%;
+}
 
 .bg {
     margin: 0;
@@ -10,20 +13,20 @@
     align-items: center;
 }
 
-  .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #3C486B;
-    position: fixed;
-    height: 200%;
-    overflow: auto;
-  }
+.sidebar {
+  margin-left: 0;
+  padding: 0;
+  width: 210px;
+  background-color: #00ACC1;
+  position: fixed;
+  height: 100%;
+  float: left;
+}
   
   .sidebar a {
     display: block;
     color: #F0F0F0;
-    padding: 16px;
+    padding: 17px;
     text-decoration: none;
   }
    
@@ -35,24 +38,30 @@
   
 
 .sidebar a:hover:not(.logo-menu) {
-    background-color: #000000;
+    background-color: #0021fa;
     color: white;
 }
 
-  .logo-menu {
-    background-image: url(../pics/kids.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+.video{
+  background-color: rgba(0, 0, 0, 0.50);
 }
   
-  div#content {
-    color: white ;
-    margin-left: 200px;
-    padding: 0px 50px;
-    padding-top: 16px;
-    height: 260px;
-    background-color: rgb(25, 104, 135);
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content {
+  color: rgb(0, 0, 0) ;
+  margin-left: 200px;
+  padding: 0px 50px;
+  padding-top: 16px;
+  height: 100vh;
+  background-image: url(../pics/abakada.png);
+  background-position: center;
+  background-size: cover;
+}
+
 
 
 

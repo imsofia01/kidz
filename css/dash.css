@@ -1,8 +1,9 @@
 body,html {
-  overflow-x:hidden;
+  margin: 0;
+  height: 100%;
 }
 .bg {
-    margin: 0;
+  margin: 0;
     font-family: "Lato", sans-serif;
   }
 .title{
@@ -11,19 +12,19 @@ body,html {
 }
 
   .sidebar {
-    margin: 0;
+    margin-left: 0;
     padding: 0;
-    width: 200px;
-    background-color: #3C486B;
+    width: 210px;
+    background-color: #00ACC1;
     position: fixed;
-    height: 200%;
-    overflow: auto;
+    height: 100%;
+    float: left;
   }
   
   .sidebar a {
     display: block;
     color: #F0F0F0;
-    padding: 16px;
+    padding: 17px;
     text-decoration: none;
   }
    
@@ -31,27 +32,29 @@ body,html {
   .sidebar a.active {
     background-color: #023144;
     color: rgb(255, 255, 255);
+    
   }
   
 
 .sidebar a:hover:not(.logo-menu) {
     background-color: #000000;
     color: white;
+    
 }
 
-  .logo-menu {
-    background-image: url(../pics/kids.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-  
-  div.content {
+.content {
     color: white ;
     margin-left: 200px;
     padding: 0px 50px;
     padding-top: 16px;
-    height: 500vh;
-    background-color: rgb(25, 104, 135);
+    height: 100vh;
+    background-color: rgb(5, 137, 189);
   }
 /* Panel div*/
 section {
@@ -61,16 +64,22 @@ section {
   justify-content: center;
   height: 80vh;
 }
-.panel-1 {
-background:#423E3B;  
-}
-.panel-2 {
-  background:#88498F;
-}
+
 h1 {
     font-size:4rem;
+    text-transform: capitalize;
+    text-align: center;
+    
+
 }
 h2{
   text-align: center;
 }
   
+.footer {
+  height: 50%;
+  background-color: #055394;
+  color: white;
+
+
+}

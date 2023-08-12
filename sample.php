@@ -5,18 +5,11 @@ include 'config/database.php';
 include 'config/result.php';
 include 'savenames.php';
 
-// include 'play.php';
 
 $sql = "SELECT * FROM player_name";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 
-
-// $data = "SELECT * FROM result";
-// $resultData = mysqli_query($conn, $data);
-// $Check = mysqli_num_rows($resultData);
-
-// $conn->close();
 
 }
 ?>
@@ -78,22 +71,22 @@ $resultCheck = mysqli_num_rows($result);
                 </tr>
                 <tr>
                     <td> <span for="total_correct"> Tamang sagot</label> </td>
-                    <td><span class="total-correct" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span></td>
+                    <td><span class="total-correct" type="hidden"  name="quiz_results" id="quizResultsInput"></span></td>
                     
                 </tr>
                 <tr>
                     <td> <label for="total_wrong"> Maling sagot </label>  </td>
-                    <td><span class="total-wrong" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span> </td>
+                    <td><span class="total-wrong" type="hidden"  name="quiz_results" id="quizResultsInput"></span> </td>
                     
                 </tr>
                 <tr>
                     <td> <label for="percentage"> Percentage </label> </td>
-                    <td><span class="percentage" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span> </td>
+                    <td><span class="percentage" type="hidden"  name="quiz_results" id="quizResultsInput"></span> </td>
                     
                 </tr>
                 <tr>
                     <td> Kabuuang sagot </td>
-                    <td><span class="total-puntos" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span></td>
+                    <td><span class="total-puntos" type="hidden"  name="quiz_results" id="quizResultsInput"></span></td>
                     
                 </tr> 
             </table>

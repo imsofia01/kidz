@@ -12,7 +12,7 @@
 <body class="bg">
   <div class="sidebar">
       <a class="logo-menu">
-        <img src="pics/kidss.png" width="170" height="90" style="margin-right: 20px;"> </a>
+        <img src="pics/logo.png" width="180" height="180" > </a>
         
             <a class="active" href="index.php"> <span class="fa fa-home"> </span>  Home</a>
             <a href="video.php"> <span class="fa fa-video-camera"> </span>  2D Video Lesson</a>
@@ -24,11 +24,6 @@
 
 <div class="content"> 
 <main class="container">
-    <h1>About</h1>
-    <p> the author</p>
-  </section>
-  <br>
-  <br>
   <br>
   <h2>Responsive Sidebar Example</h2>
   <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
@@ -36,6 +31,11 @@
   <h3>Resize the browser window to see the effect.</h3>
 </main>
 </div>
+<footer class="footer"> 
+    <br>
+    <h1>About</h1>
+    <p> the author</p>
+  </footer>
 </body>
 </html>
 
