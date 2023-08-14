@@ -1,5 +1,7 @@
 .bg{
-background-color: aquamarine;
+background-image: url(../pics/4.jpg);
+background-repeat: no-repeat;
+background-size: cover;
 }
 table{
   background-color: rgba(0, 0, 0, 0.25);

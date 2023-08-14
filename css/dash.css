@@ -49,12 +49,15 @@ body,html {
   height: 100%;
 }
 .content {
-    color: white ;
+    color: rgb(0, 0, 0) ;
     margin-left: 200px;
     padding: 0px 50px;
     padding-top: 16px;
     height: 100vh;
-    background-color: rgb(5, 137, 189);
+    /* background-color: rgb(5, 137, 189); */
+    background-image: url(../pics/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 /* Panel div*/
 section {
@@ -66,18 +69,22 @@ section {
 }
 
 h1 {
+ 
     font-size:4rem;
     text-transform: capitalize;
     text-align: center;
     
 
 }
-h2{
+
+.article h3{
   text-align: center;
+  margin-top: 40%;
+  background-color: rgba(116, 160, 12, 0.645);
+  font-weight: bold;
 }
-  
 .footer {
-  height: 50%;
+  height: 100%;
   background-color: #055394;
   color: white;
 

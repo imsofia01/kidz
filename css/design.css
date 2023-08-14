@@ -52,13 +52,14 @@ body,html {
   height: 100%;
 }
 .content {
-  color: rgb(0, 0, 0) ;
+  color: white ;
   margin-left: 200px;
   padding: 0px 50px;
   padding-top: 16px;
   height: 100vh;
-  background-image: url(../pics/abakada.png);
-  background-position: center;
+  /* background-color: rgb(5, 137, 189); */
+  background-image: url(../pics/2.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
 }
 

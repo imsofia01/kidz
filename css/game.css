@@ -76,16 +76,16 @@
 }
 
 .content {
-    color: rgb(0, 0, 0) ;
-    margin-left: 200px;
-    padding: 0px 50px;
-    padding-top: 16px;
-    height: 100vh;
-    background-image: url(../pics/abakada.png);
-    background-position: center;
-    background-size: cover;
-  }
-
+  color: white ;
+  margin-left: 200px;
+  padding: 0px 50px;
+  padding-top: 16px;
+  height: 100vh;
+  /* background-color: rgb(5, 137, 189); */
+  background-image: url(../pics/3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 h1{
     
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

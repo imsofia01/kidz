@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    
 <div class="home-box custom-box ">
         <h2> Pagsusulit  </h2>
         <p> Bilang ng mga Tanong: <span class="tanong"> </span></p>
@@ -33,20 +32,7 @@
           <div class="droppable" data-draggable-id="Kamay"> <span> Kamay </span> </div>
           <div class="droppable" data-draggable-id="Babae"> <span> Babae </span> </div>
         </div>
-
-        <div class="sunod-tanong-btn">
-        <button id="btn" type="button" class="btn" onclick="sunod()"> Sunod </button>
-        
-      </div>
-      <br>
-       <div class="sagot-indicator">
-        </div>
-  </div>
-  
-        <div id="container-box-2" class="container-box custom-box hide">
-        <div class="tanong-bilang">
           
-           </div>
         <div class="draggable-element">
         <img class="draggable" draggable="true" src="pics/Aso.jpg" id="Aso"> </img>
         <img class="draggable" draggable="true" src="pics/paru-paro.jpg" id="Paru-paro"> </img>
@@ -56,11 +42,19 @@
             <div class="droppable" data-draggable-id="Aso"> <span> Aso </span> </div> 
             <div class="droppable" data-draggable-id="Paru-paro"> <span> Paru-paro </span> </div>
             <div class="droppable" data-draggable-id="Ibon"> <span> Ibon </span> </div>
-        </div>
-        <div class="controls-container">
-            <div id="result"> </div>
-            <button id="btn" type="button" class="btn" onclick="sunod()"> Sunod </button>
-        </div>
+        </div>  
+        <div class="score-indicator">
+      <span id="correctCount">0</span> 
+        <span id="wrongCount">0</span>
+    </div>
+    <br>
+
+        <div class="sunod-tanong-btn">
+        <button id="btn" type="button" class="btn" onclick="sunod()"> Sunod </button>
+   
+      </div>
+  </div>
+  
   
 
 <!-- <script src="js/images.js"></script> -->
@@ -76,7 +70,6 @@ const nextBtn = document.getElementById('myBtn');
 const answersIndicatorContainer = document.querySelectorAll(".sagot-indicator");
 const sagotIndicator = document.querySelector('.sagot-indicator');
 
-// let availableQuestions = [];
 let questionCounter = 0;
 let results = [];
 
@@ -115,6 +108,12 @@ droppableElements.forEach((element) => {
     const expectedAnswer = element.getAttribute('data-draggable-id');
     const isCorrect = draggableId === expectedAnswer;
     
+     // Check if the droppable element already contains an image
+      // An answer has already been placed, handle accordingly (e.g., display an error message)
+     if (element.querySelector('.draggable')) {
+      console.log('An answer has already been placed in the droppable element.');
+      return;
+    }
     
     if (isCorrect) {
       // Correct answer
@@ -122,30 +121,43 @@ droppableElements.forEach((element) => {
       element.classList.add('correct');
       console.log('Correct answer!');
 
+    // Disable drag functionality for the dropped image
+    draggableElement.draggable = false;
+
     } else {
       // Wrong answer
       draggableElement.classList.add('wrong');
       element.classList.add('wrong');
       console.log('Wrong answer!');
 
+       // Disable drag functionality for the dropped image
+    draggableElement.draggable = false;
+
     }
 
-    if (element.querySelector('.draggable')) {
-      // An answer has already been placed, handle accordingly (e.g., display an error message)
-      console.log('An answer has already been placed in the droppable element.');
-      return;
-    
+      // Remove the element from its previous parent
+      if (draggableElement.parentElement !== null) {
+      draggableElement.parentElement.removeChild(draggableElement);
     }
-    
-    element.appendChild(draggableElement);  
+
+    element.appendChild(draggableElement);
     
 
       // Store the result in the results array
       results.push(isCorrect);
   
 
-
-
+  let correctCount = 0;
+  let wrongCount = 0;
+  for(let i = 0; i < results.length; i++){
+    if( results[i] === true){
+      correctCount++;
+    }else{
+      wrongCount++;
+    }
+  }
+  document.getElementById('correctCount').textContent = correctCount;
+  document.getElementById('wrongCount').textContent = wrongCount;
 });
 });
 
@@ -168,7 +180,6 @@ function simulaQuiz() {
     // show quiz box
     container.classList.remove("hide");
 }
-
 
 
 </script>
