@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@500&family=Montserrat:wght@500;600&family=Rubik+Puddles&display=swap');
+
+
 body,html {
   margin: 0;
   height: 100%;
@@ -263,7 +268,8 @@ body {
 	 color: rgb(6, 0, 0);
 	 text-align: center;
 	 justify-content: center;
-	 
+	 padding: 60px 60px;
+	 padding-top: 50px;
 	 font-size: 32px;
 	 margin-top: 10px;
    }

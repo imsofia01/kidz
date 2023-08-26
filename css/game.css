@@ -90,7 +90,7 @@ a:focus {
 .sidebar-nav > li a {
   display: block;
   text-decoration: none;
-  color: #030303;
+  color: #000000;
   font-weight: 600;
   font-size: 18px;
 }
@@ -264,7 +264,12 @@ a:focus {
 }
 
 
+.game a{
+  align-items: baseline;
+}
+
 .game h3{
+  
   text-align: center;
   font-weight: bold;
   color: white;

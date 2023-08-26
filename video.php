@@ -15,6 +15,7 @@
 
 <title>2D INTERACTIVE</title>
 </head>
+<body class="bg">
 <div id="wrapper">
 
   <aside id="sidebar-wrapper">
@@ -31,10 +32,10 @@
         <a href="video.php"> <span class="fa fa-video-camera"> </span> 2D VIDEO lEESON</a>
       </li>
       <li>
-        <a href="assess.php"><span class="fa fa-folder"> </span>ASSESSMENT</a>
+        <a href="assess.php"><span class="fa fa-folder"> </span>  ASSESSMENT</a>
       </li>
         <li>
-        <a href="quizresult.php"><span class="fa fa-trophy"> </span>LEADERBOARD</a>
+        <a href="quizresult.php"><span class="fa fa-trophy"> </span>  LEADERBOARD</a>
       </li>
     </ul>
   </aside>
@@ -59,7 +60,7 @@
 	<br>
 	<br>
   <h1> Mga aralin</h1>
-<p> 2D INTERACTIVE LESSON AND ASSESSMENT FOR KINDERGARTEN PUPILS</p>
+	<p> 2D INTERACTIVE LESSON AND ASSESSMENT FOR KINDERGARTEN PUPILS</p>
 <br>
 <br>
 <br> 
