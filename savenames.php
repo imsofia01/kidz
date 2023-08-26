@@ -45,58 +45,46 @@ if (!$result) {
 </head>
 <body>
 
-    <form action="sample.php" class="saveName" method="POST" onsubmit="saveQuizResults()">
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="form text-white" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
-
-            <div class="mb-md-5 mt-md-4 pb-5">
-
-              <h2 class="fw-bold mb-2 text-uppercase">Pangalan</h2>
-              <p class="text-white-50 mb-5">Isulat ang iyong Pangalan!</p>
-
-         
-              <div class="form-outline form-white mb-4">
-
-              <label for="username">Pangalan:</label>
-              <input type="text" name="username" id="username" required>
-              </div> 
-
-              <div class="form-outline form-white mb-4">
-              <label for="edad">Edad:  </label>
-              <input type="number" name="edad" id="edad" required>
-              </div> 
-
-              <div class="form-outline form-white mb-4">
-              <label for="kasarian">Kasarian</label>
-              <select name="kasarian" id="kasarian">
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-              </select>
-              </div> 
-
-              <div class="form-outline form-white mb-4">
-                <label for="petsa">Date</label>
-                <input type="date" name="petsa" id="petsa" required>
+<form action="sample.php" class="saveName" method="POST" onsubmit="saveQuizResults()">
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="form text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase">Pangalan</h2>
+                <p class="text-white-50 mb-5">Isulat ang iyong Pangalan!</p>
+                <div class="form-outline form-white mb-4">
+                  <label for="username">Pangalan:</label>
+                  <input type="text" name="username" id="username" required>
+                </div> 
+                <div class="form-outline form-white mb-4">
+                  <label for="edad">Edad:</label>
+                  <input type="number" name="edad" id="edad" required>
+                </div> 
+                <div class="form-outline form-white mb-4">
+                  <label for="kasarian">Kasarian</label>
+                  <select name="kasarian" id="kasarian">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div> 
+                <div class="form-outline form-white mb-4">
+                  <label for="petsa">Date</label>
+                  <input type="date" name="petsa" id="petsa" required>
+                </div>
+                <button class="btn btn-outline-light btn-lg px-5" onclick="next()" type="submit" name="submit" value="submit">Isave</button>
               </div>
-
-              <button class="btn btn-outline-light btn-lg px-5" onclick="next()" type="submit" name="submit"  value="submit">Isave</button>
-              <form action="sample.php" method="POST">
-            </form>
             </div>
-           
-
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </form>
-</section>
+  </section>
+</form>
+
   </div>
 </div>
 

@@ -11,24 +11,49 @@
   <title>2D INTERACTIVE</title>
 </head>
 <body class="bg">
+<div id="wrapper">
 
-<div class="sidebar">
-      <a class="logo-menu">
-        <img src="pics/logo.png" width="180" height="180"> </a>
-        
-            <a class="active" href="home-page.php"> <span class="fa fa-home"> </span>  Home</a>
-            <a href="video.php"> <span class="fa fa-video-camera"> </span>  2D Video Lesson</a>
-            <a href="assess.php"><span class="fa fa-folder"> </span> 	Pagtatasa</a>
-            <a href="quizresult.php"><span class="fa fa-trophy"> </span> Talaan ng Nangunguna</a>
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <h2> <a class="logo-menu">
+        <img src="pics/logo.png" width="180" height="180" > </a></h2>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="active">
+        <a class="active" href="index.php"> <span class="fa fa-home"> </span>  Home</a>
+      </li>
+  
+      <li>
+        <a href="video.php"> <span class="fa fa-video-camera"> </span>  2D VIDEO lEESON</a>
+      </li>
+      <li>
+        <a href="assess.php"><span class="fa fa-folder"> </span>  ASSESSMENT</a>
+      </li>
+        <li>
+        <a href="quizresult.php"><span class="fa fa-trophy"> </span>  LEADERBOARD</a>
+      </li>
+    </ul>
+  </aside>
+
+  <div id="navbar-wrapper">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
         </div>
-     </div>
-</div>
-</div>
-<div class="content"> 
+      </div>
+    </nav>
+  </div>
+
+<div class="content-box"> 
 <main class="container">
+  <br>
+  <div class="article">
        <br>
         <div class="game py-5">
-            <h3>MGA LARO  </h3>
+           <br>
+           <br>
+           
             
         
             <a href="savenames.php" class="square_btn">Tanong </a>         
@@ -45,5 +70,15 @@
             </main>
     </div>
 </body>
+
+<script> 
+const $button  = document.querySelector('#sidebar-toggle');
+const $wrapper = document.querySelector('#wrapper');
+
+$button.addEventListener('click', (e) => {
+  e.preventDefault();
+  $wrapper.classList.toggle('toggled');
+});
+</script>
 </html>
 

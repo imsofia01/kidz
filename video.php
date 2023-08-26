@@ -15,61 +15,71 @@
 
 <title>2D INTERACTIVE</title>
 </head>
-<body class="bg">
-<div class="sidebar">
-      <a class="logo-menu">
-        <img src="pics/logo.png" width="180" height="180"> </a>
-        
-            <a class="active" href="home-page.php"> <span class="fa fa-home"> </span>  Home</a>
-            <a href="video.php"> <span class="fa fa-video-camera"> </span>  2D Video Lesson</a>
-            <a href="assess.php"><span class="fa fa-folder"> </span> Assessment</a>
-            <a href="quizresult.php"><span class="fa fa-trophy"> </span> Leaderboard</a>
+<div id="wrapper">
+
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <h2> <a class="logo-menu">
+        <img src="pics/logo.png" width="180" height="180" > </a></h2>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="active">
+        <a class="active" href="index.php"> <span class="fa fa-home"> </span> Home</a>
+      </li>
+  
+      <li>
+        <a href="video.php"> <span class="fa fa-video-camera"> </span> 2D VIDEO lEESON</a>
+      </li>
+      <li>
+        <a href="assess.php"><span class="fa fa-folder"> </span>ASSESSMENT</a>
+      </li>
+        <li>
+        <a href="quizresult.php"><span class="fa fa-trophy"> </span>LEADERBOARD</a>
+      </li>
+    </ul>
+  </aside>
+
+  <div id="navbar-wrapper">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
         </div>
-     </div>
-</div>
-     </div>
-</div>
-<div class="content"> 
+      </div>
+    </nav>
+  </div>
+
+<div class="content-box"> 
 <main class="container">
   <br>
+  <div class="article">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
   <h1> Mga aralin</h1>
 <p> 2D INTERACTIVE LESSON AND ASSESSMENT FOR KINDERGARTEN PUPILS</p>
 <br>
 <br>
 <br> 
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <h3>Card 1</h3>
-      <p>Some text</p>
-      <p>Some text</p>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <h3>Card 2</h3>
-      <p>Some text</p>
-      <p>Some text</p>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <h3>Card 3</h3>
-      <p>Some text</p>
-      <p>Some text</p>
-    </div>
-  </div>
-
-
-
-        
+    
 </main>
 </div>
         
 </div>
 
 </body>
+
+<script> 
+const $button  = document.querySelector('#sidebar-toggle');
+const $wrapper = document.querySelector('#wrapper');
+
+$button.addEventListener('click', (e) => {
+  e.preventDefault();
+  $wrapper.classList.toggle('toggled');
+});
+</script>
+
 </html>
 

@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
 .bg{
 background-image: url(../pics/4.jpg);
 background-repeat: no-repeat;
@@ -29,54 +31,60 @@ td, th{
 
 
 /* CSS btn */
-.button-container {
-  text-align: right;
-  padding: 10px; /* Add padding for spacing if needed */
+html {
+  font-family: "Open Sans", sans-serif;
 }
 
-.button-27 {
-    appearance: none;
-    background-color: #000000;
-    border: 2px solid #1A1A1A;
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
+h1 {
+  color: #444;
+}
+
+ .btn {
+    padding: 1em 2.1em 1.1em;
+    border-radius: 3px;
+    margin: 8px 8px 8px 8px;
+    color: #fbdedb;
+    background-color: #fbdedb;
     display: inline-block;
-    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    font-size: 16px;
-    font-weight: 600;
-    line-height: normal;
-  
-    min-height: 60px;
-    
-    outline: none;
-    padding: 16px 24px;
+    background: #e74c3c;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: .85em;
+    text-transform: uppercase;
     text-align: center;
     text-decoration: none;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 15%;
-    will-change: transform;
-   
-  }
-  
-  .button-27:disabled {
-    pointer-events: none;
-  }
-  
-  .button-27:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
-  }
-  
-  .button-27:active {
-    box-shadow: none;
-    transform: translateY(0);
-  }
+    -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+    position: relative;
+}
+.btn:hover, .btn:focus {
+    opacity: 0.8;
+}
+.btn:active {
+    -webkit-transform: scale(0.80);
+    -moz-transform: scale(0.80);
+    -ms-transform: scale(0.80);
+    -o-transform: scale(0.80);
+    transform: scale(0.80);
+}
+.btn.block {
+    display: block !important;
+}
+.btn.circular {
+  border-radius: 50em !important;
+}
 
+
+/* Colours */
+
+.purple {
+    background-color: #564f8a;
+}
   #mySidenav a {
     position: absolute;
     left: -40px;
@@ -200,8 +208,6 @@ td, th{
   }
 }
 
-
-/* THE END OF THE IMPORTANT STUFF */
 
 /* Basic Styling */
 body {

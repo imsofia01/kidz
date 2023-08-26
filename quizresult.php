@@ -46,15 +46,12 @@
   
 
 </head>
-<div class="button-container">
-<a href="home-page.php">                      
-    <button type="submit" class="button-27" role="button"> home</button>
-        </a>
+<a href="home-page.php" class="btn purple">Home</a>
 </div>
 <body class ="bg" style="margin: 50px;">
 <br>
 <br>
-
+<br>
 </div>
   <h1> Talaan ng Nangunguna </h1>
     <form action="deleteQresult.php" method="post">

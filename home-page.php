@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,34 +13,73 @@
   <title>2D INTERACTIVE</title>
 </head>
 <body class="bg">
-  <div class="sidebar">
-      <a class="logo-menu">
-        <img src="pics/logo.png" width="180" height="180" > </a>
-        
-            <a class="active" href="index.php"> <span class="fa fa-home"> </span>  Home</a>
-            <a href="video.php"> <span class="fa fa-video-camera"> </span>  2D Video Lesson</a>
-            <a href="assess.php"><span class="fa fa-folder"> </span> 	Pagtatasa</a>
-            <a href="quizresult.php"><span class="fa fa-trophy"> </span> Talaan ng Nangunguna</a>
-        </div>
-     </div>
-</div>
 
-<div class="content"> 
-<main class="container">
+<div id="wrapper">
+
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <h2> <a class="logo-menu">
+        <img src="pics/logo.png" width="180" height="180" > </a></h2>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="active">
+        <a class="active" href="index.php"> <span class="fa fa-home"> </span> Home</a>
+      </li>
+  
+      <li>
+        <a href="video.php"> <span class="fa fa-video-camera"> </span> 2D VIDEO lEESON</a>
+      </li>
+      <li>
+        <a href="assess.php"><span class="fa fa-folder"> </span>ASSESSMENT</a>
+      </li>
+        <li>
+        <a href="quizresult.php"><span class="fa fa-trophy"> </span>LEADERBOARD</a>
+      </li>
+    </ul>
+  </aside>
+
+  <div id="navbar-wrapper">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand" id="sidebar-toggle"><i class="fa fa-bars"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<div class="content-box"> 
+<div class="container">
   <br>
   <div class="article">
-  <h3> ang 2D INTERACTIVE LEARNING AND ASSESSMENT FOR KINDERGARTEN PUPILS
-  This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.
-  We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.
-  Resize the browser window to see the effect.</h3>
+    <h1> Welcome to Tuklasko!</h1>
+    <p> 2D INTERACTIVE LEARNING AND ASSESSMENT APPLICATION FOR KINDERGARTEN PUPILS</p>
+  
   </div>
-</main>
 </div>
-<footer class="footer"> 
-    <br>
-    <h1>About</h1>
-    <p> the author</p>
-  </footer>
+<div class="footer-box"> 
+<div class="container">
+  <br>
+  <div class="article ">
+    <h2>About</h2>
+    <p> 2D INTERACTIVE LEARNING AND ASSESSMENT FOR KINDERGARTEN PUPILS
+    </p>
+  
+  </div>
+
+</div>
+
 </body>
+<script> 
+const $button  = document.querySelector('#sidebar-toggle');
+const $wrapper = document.querySelector('#wrapper');
+
+$button.addEventListener('click', (e) => {
+  e.preventDefault();
+  $wrapper.classList.toggle('toggled');
+});
+</script>
+
 </html>
 
