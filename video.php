@@ -32,15 +32,38 @@
 <div class="content"> 
 <main class="container">
   <br>
-        <div class=video>            
-          <h1>VIDEO </h1>
-            <br>
-            <form action="video.php">
-            <br>    
-            <input type="file" id="myFile" name="filename">
-            <br>
-            <input type="submit">
-        </form>
+  <h1> Mga aralin</h1>
+<p> 2D INTERACTIVE LESSON AND ASSESSMENT FOR KINDERGARTEN PUPILS</p>
+<br>
+<br>
+<br> 
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+
+
+
         
 </main>
 </div>

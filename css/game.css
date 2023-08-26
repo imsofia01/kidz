@@ -50,6 +50,8 @@
     color: white;
 }
 
+
+
   /* .logo-menu {
     background-image: url(../pics/kids.png);
     background-repeat: no-repeat;
@@ -57,10 +59,10 @@
 } */
 
 /*contents */
-.game{
+/* .game{
   background-color: rgba(0, 0, 0, 0.50);
   
-}
+} */
 
 .game h3{
   text-align: center;
@@ -114,5 +116,6 @@ h1{
   background: #ffc25c;
   color: #FFF;
 }
+
 
 

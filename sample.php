@@ -98,7 +98,6 @@ $resultCheck = mysqli_num_rows($result);
       
       
 <script src="js/script.js"></script>
-<!-- <script src="js/images.js"></script> -->
 
 <script> 
 

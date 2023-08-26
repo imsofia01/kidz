@@ -18,8 +18,8 @@
         
             <a class="active" href="home-page.php"> <span class="fa fa-home"> </span>  Home</a>
             <a href="video.php"> <span class="fa fa-video-camera"> </span>  2D Video Lesson</a>
-            <a href="assess.php"><span class="fa fa-folder"> </span> Assessment</a>
-            <a href="quizresult.php"><span class="fa fa-trophy"> </span> Leaderboard</a>
+            <a href="assess.php"><span class="fa fa-folder"> </span> 	Pagtatasa</a>
+            <a href="quizresult.php"><span class="fa fa-trophy"> </span> Talaan ng Nangunguna</a>
         </div>
      </div>
 </div>
@@ -39,7 +39,7 @@
         </a> -->
 
          
-        <a href="drag.php" class="square_btn">Drag Pictures</a>              
+        <a href="dragPlay.php" class="square_btn">Drag Pictures</a>              
             
 
             </main>

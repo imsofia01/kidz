@@ -44,25 +44,57 @@ body,html {
 
 .video{
   background-color: rgba(0, 0, 0, 0.50);
+  margin-top: 150px;
 }
-  
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+
+
+
 .content {
-  color: white ;
+  color: rgb(24, 24, 24) ;
   margin-left: 200px;
   padding: 0px 50px;
   padding-top: 16px;
   height: 100vh;
-  /* background-color: rgb(5, 137, 189); */
   background-image: url(../pics/2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px 10px;
+  background-color: #023144;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    background-color: darkblue;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  
+  padding: 16px;
+  text-align: center;
+  background-color: darkblue;
+}
 
 
 

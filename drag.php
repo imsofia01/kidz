@@ -1,3 +1,19 @@
+<?php 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+include 'config/result.php';
+// include 'config/result.php';
+include 'dragPlay.php';
+
+
+$sql = "SELECT * FROM gamescore";
+$result = mysqli_query($conn, $sql);
+$resultCheck = mysqli_num_rows($result);
+
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +27,8 @@
 
 <body>
 <div class="home-box custom-box ">
+        <h1><?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>!</h1>
+        <br>
         <h2> Pagsusulit  </h2>
         <p> Bilang ng mga Tanong: <span class="tanong"> </span></p>
         <button id="btn" type="button" class="btn" onclick="simulaQuiz()"> Simula </button>
@@ -27,7 +45,7 @@
           <img class="draggable" draggable="true" src="pics/kamay.png" id="Kamay"> </img>
         </div>
 
-        <div class="droppable-points" id="drop">
+        <div class="droppable-points">
           <div class="droppable" data-draggable-id="Lalaki"> <span> Lalaki </span> </div> 
           <div class="droppable" data-draggable-id="Kamay"> <span> Kamay </span> </div>
           <div class="droppable" data-draggable-id="Babae"> <span> Babae </span> </div>
@@ -38,7 +56,7 @@
         <img class="draggable" draggable="true" src="pics/paru-paro.jpg" id="Paru-paro"> </img>
         <img class="draggable" draggable="true" src="pics/ibon.jpg" id="Ibon"> </img>
         </div>
-        <div class="droppable-points" id="drop">
+        <div class="droppable-points">
             <div class="droppable" data-draggable-id="Aso"> <span> Aso </span> </div> 
             <div class="droppable" data-draggable-id="Paru-paro"> <span> Paru-paro </span> </div>
             <div class="droppable" data-draggable-id="Ibon"> <span> Ibon </span> </div>
@@ -146,7 +164,7 @@ droppableElements.forEach((element) => {
       // Store the result in the results array
       results.push(isCorrect);
   
-
+// loop to get the wrong and correct answer for drag and drop images//
   let correctCount = 0;
   let wrongCount = 0;
   for(let i = 0; i < results.length; i++){

@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-size: 16px;
+    background-color: #f8f053;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+
+}
+
+.form{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+
+
+
+
+.saveName.hide{
+    display: none;
+}
+
+@media(max-width: 767px){
+    .result-box .btn{
+        margin-bottom: 15px;
+    }
+    body{
+        padding: 15px;
+    }
+}

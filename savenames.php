@@ -5,14 +5,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   include_once "config/database.php";
 
 
-if (isset($_POST['username']) || isset($_POST['edad']) || isset($_POST['kasarian'])  )
+
+
+if (isset($_POST['username']) || isset($_POST['edad']) || isset($_POST['kasarian']) || isset($_POST['petsa'])  )
  {
     $username = $_POST['username'];
     $edad = $_POST['edad'];
     $kasarian = $_POST['kasarian'];
+    $petsa = $_POST['petsa'];
+ // Validate and convert the input date
+ $parsedDate = date_parse($petsa);
+
+ if ($parsedDate['error_count'] === 0 && checkdate($parsedDate['month'], $parsedDate['day'], $parsedDate['year'])) {
+   $validDate = $parsedDate['year'] . '-' . str_pad($parsedDate['month'], 2, '0', STR_PAD_LEFT) . '-' . str_pad($parsedDate['day'], 2, '0', STR_PAD_LEFT);
+
 
 // Create the SQL INSERT query
-$sql = "INSERT INTO player_name (username, edad, kasarian) VALUES ('$username', '$edad', '$kasarian')";
+$sql = "INSERT INTO player_name (username, edad, kasarian, petsa) VALUES ('$username', '$edad', '$kasarian', '$petsa')";
 $result = mysqli_query($conn,$sql);
 
 if (!$result) {
@@ -20,10 +29,8 @@ if (!$result) {
 }
  }
 }
-
+}
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,6 +78,11 @@ if (!$result) {
                   <option value="other">Other</option>
               </select>
               </div> 
+
+              <div class="form-outline form-white mb-4">
+                <label for="petsa">Date</label>
+                <input type="date" name="petsa" id="petsa" required>
+              </div>
 
               <button class="btn btn-outline-light btn-lg px-5" onclick="next()" type="submit" name="submit"  value="submit">Isave</button>
               <form action="sample.php" method="POST">

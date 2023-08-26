@@ -1,6 +1,7 @@
 body,html {
   margin: 0;
   height: 100%;
+  box-sizing: border-box;
 }
 .bg {
   margin: 0;
@@ -15,7 +16,7 @@ body,html {
     margin-left: 0;
     padding: 0;
     width: 210px;
-    background-color: #00ACC1;
+    background-color: #31b851;
     position: fixed;
     height: 100%;
     float: left;
