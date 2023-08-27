@@ -25,11 +25,11 @@
     </div>
     <ul class="sidebar-nav">
       <li class="active">
-        <a class="active" href="index.php"> <span class="fa fa-home"> </span> Home</a>
+        <a class="active" href="home-page.php"> <span class="fa fa-home"> </span> Home</a>
       </li>
   
       <li>
-        <a href="video.php"> <span class="fa fa-video-camera"> </span> 2D VIDEO lEESON</a>
+        <a href="video.php"> <span class="fa fa-video-camera"> </span> 2D VIDEO LESSON</a>
       </li>
       <li>
         <a href="assess.php"><span class="fa fa-folder"> </span>  ASSESSMENT</a>
@@ -52,13 +52,7 @@
 
 <div class="content-box"> 
 <main class="container">
-  <br>
   <div class="article">
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
   <h1> Mga aralin</h1>
 	<p> 2D INTERACTIVE LESSON AND ASSESSMENT FOR KINDERGARTEN PUPILS</p>
 <br>

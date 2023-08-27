@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@500&family=Montserrat:wght@500;600&family=Rubik+Puddles&display=swap');
 
 *{
@@ -50,7 +49,7 @@ a:focus {
   margin-left: -250px;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #31b851;
+  background-color: #f28a3a;
   transition: all 0.9s ease;
 }
 
@@ -74,7 +73,7 @@ a:focus {
 
 .sidebar-nav {
   position: absolute;
-  top: 250px;
+  top: 210px;
   width: 850px;
   margin: 0;
   padding: 0;
@@ -84,7 +83,7 @@ a:focus {
 .sidebar-nav > li {
   text-indent: 10px;
   line-height: 42px;
-  padding: 12px 0;
+  padding: 10px 0;
   margin: 0;
 }
 .sidebar-nav > li a {
@@ -280,6 +279,7 @@ a:focus {
     flex-direction: column;
     height: 100%;
     
+    
 }
 
 .container {
@@ -289,15 +289,16 @@ a:focus {
 }
 .content-box {
     color: rgb(0, 0, 0) ;
-    height: 100vh;
+    height: 110vh;
     left: 12px;
-    background-image: url(../pics/3.jpg);
+    background-image: url(../pics/7.png);
     background-size:cover ;
     background-repeat: no-repeat;
   }
-h1{
-    
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.article h1{
+
+  font-family: 'ADLaM Display', cursive;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
 }
 
@@ -306,7 +307,7 @@ h1{
   margin-left: 50px;
   text-align: center;
   display: inline-block;
-  margin-top: 50px;
+  margin-top: 5px;
   height: 70px;
   width: 160px;
   font-weight: bolder;

@@ -151,24 +151,19 @@ body{
 
  .droppable,
  .draggable {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 23px;
+   font-weight: bold;
+   transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
    padding: 10px;
-   border: 1px solid #ccc;
-   margin: 10px;
-   text-align: center;
+   border: 1px dashed #101010;
    background-color: #f2f2f2;
  }
 
- /* Media query for small screens */
- @media screen and (max-width: 900px) {
-   .droppable-points,
-   .draggable-element,
-   .score-indicator {
-     flex-direction: column;
-   }
- }
 
 /* drag & drop CSS */
-
 .draggable-element,
 .droppable-points {
     display: flex;
@@ -178,9 +173,8 @@ body{
 }
 
 .draggable {
-    
-    height: 10rem;
-    width: 10rem;
+    height: 9rem;
+    width: 9rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,22 +190,6 @@ body{
     opacity: 0.5;
 }
 
-.droppable {
-    height: 6.5rem;
-    width: 7.5rem;
-    margin: 1rem auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 23px;
-    font-weight: bold;
-    background-color: #ffffff;
-    border: 3px dashed #111;
-    transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
-    padding: 1rem auto;
-    
-}
 
 .droppable span {
     font-size: 1.25rem;
@@ -238,6 +216,40 @@ img {
     filter: drop-shadow(0 0.3em 0.9em rgba(0, 0, 0, 0.25));
 
 }
+
+/* responsive */
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+    .droppable,
+    .draggable {
+        font-size: 18px; /* Adjust font size for smaller screens */
+        /* ... adjust other properties as needed ... */
+    }
+
+    .draggable {
+        height: 7rem;
+        width: 7rem;
+        font-size: 3rem;
+        /* ... adjust other properties as needed ... */
+    }
+}
+
+/* Media query for screens with a maximum width of 576px */
+@media (max-width: 576px) {
+    .droppable,
+    .draggable {
+        font-size: 16px; /* Further adjust font size for smaller screens */
+        /* ... adjust other properties as needed ... */
+    }
+
+    .draggable {
+        height: 6rem;
+        width: 6rem;
+        font-size: 2.5rem;
+        /* ... adjust other properties as needed ... */
+    }
+}
+
 
 @media(max-width: 767px){
     .result-box .btn{

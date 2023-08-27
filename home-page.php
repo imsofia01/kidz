@@ -27,7 +27,7 @@
       </li>
   
       <li>
-        <a href="video.php"> <span class="fa fa-video-camera"> </span> 2D VIDEO lEESON</a>
+        <a href="video.php"> <span class="fa fa-video-camera"> </span> 2D VIDEO LESSON</a>
       </li>
       <li>
         <a href="assess.php"><span class="fa fa-folder"> </span>ASSESSMENT</a>
@@ -63,9 +63,9 @@
   <br>
   <div class="article ">
     <h2>About</h2>
-    <p> 2D INTERACTIVE LEARNING AND ASSESSMENT FOR KINDERGARTEN PUPILS
-    </p>
-  
+    <p> 2D INTERACTIVE LEARNING AND ASSESSMENT FOR KINDERGARTEN PUPILS </p>
+    <p class="text-center">Copyright &copy; Devpractical.com</p>
+
   </div>
 
 </div>

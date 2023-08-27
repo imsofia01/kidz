@@ -23,7 +23,7 @@ $resultCheck = mysqli_num_rows($result);
 
    
     <link rel="stylesheet" href="css/dragObject.css">
-    <title>Document</title>
+    <title>Mga image</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@ $resultCheck = mysqli_num_rows($result);
         <div class="tanong-bilang">
     
         </div>
-        <div class="container">
+     
         <div class="draggable-element">
           <img class="draggable" draggable="true" src="pics/girl.jpg" id="Babae"> </img>
           <img class="draggable" draggable="true" src="pics/lalaki.png" id="Lalaki"> </img>

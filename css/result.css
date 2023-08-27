@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
 
 .bg{
-background-image: url(../pics/4.jpg);
+  height: 150vh;
+background-image: url(../pics/8.png);
 background-repeat: no-repeat;
 background-size: cover;
 }
