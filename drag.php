@@ -19,7 +19,8 @@ $resultCheck = mysqli_num_rows($result);
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
    
     <link rel="stylesheet" href="css/dragObject.css">
     <title>Document</title>
@@ -39,6 +40,7 @@ $resultCheck = mysqli_num_rows($result);
         <div class="tanong-bilang">
     
         </div>
+        <div class="container">
         <div class="draggable-element">
           <img class="draggable" draggable="true" src="pics/girl.jpg" id="Babae"> </img>
           <img class="draggable" draggable="true" src="pics/lalaki.png" id="Lalaki"> </img>

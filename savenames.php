@@ -41,7 +41,7 @@ if (!$result) {
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"rel="stylesheet"/>
     <link rel="stylesheet" href="css/save.css">
-    <title>MyGame - Enter Your Name</title>
+    <title>Piliin ang Tamang Sagot</title>
 </head>
 <body>
 
@@ -53,29 +53,37 @@ if (!$result) {
           <div class="form text-white" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
               <div class="mb-md-5 mt-md-4 pb-5">
-                <h2 class="fw-bold mb-2 text-uppercase">Pangalan</h2>
-                <p class="text-white-50 mb-5">Isulat ang iyong Pangalan!</p>
-                <div class="form-outline form-white mb-4">
-                  <label for="username">Pangalan:</label>
-                  <input type="text" name="username" id="username" required>
-                </div> 
-                <div class="form-outline form-white mb-4">
-                  <label for="edad">Edad:</label>
-                  <input type="number" name="edad" id="edad" required>
-                </div> 
-                <div class="form-outline form-white mb-4">
-                  <label for="kasarian">Kasarian</label>
-                  <select name="kasarian" id="kasarian">
+              <h2 class="fw-bold mb-2 text-uppercase">Pangalan</h2>
+              <p class="text-white-50 mb-5">Ilagay ang iyong Pangalan!</p>
+                 <!-- Input for Pangalan (Name) -->
+                <div class="form-input-material form-white mb-2">
+                  <label for="username" class="form-label text-white">Pangalan:</label>
+                  <input type="text" name="username" id="username" class="form-control" required>
+                </div>
+                
+                <!-- Input for Edad (Age) -->
+                <div class="form-input-material form-white mb-2">
+                  <label for="edad" class="form-label text-white">Edad:</label>
+                  <input type="number" name="edad" id="edad" class="form-control" required>
+                </div>
+                
+                <!-- Select for Kasarian (Gender) -->
+                <div class="form-input-material form-white mb-2">
+                  <label for="kasarian" class="form-label text-white">Kasarian:</label>
+                  <select name="kasarian" id="kasarian" class="form-select">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
                   </select>
-                </div> 
-                <div class="form-outline form-white mb-4">
-                  <label for="petsa">Date</label>
-                  <input type="date" name="petsa" id="petsa" required>
                 </div>
-                <button class="btn btn-outline-light btn-lg px-5" onclick="next()" type="submit" name="submit" value="submit">Isave</button>
+                
+                <!-- Input for Petsa (Date) -->
+                <div class="fform-input-material form-white mb-2">
+                  <label for="petsa" class="form-label text-white">Date:</label>
+                  <input type="date" name="petsa" id="petsa" class="form-control" required>
+                </div>
+                
+                <button class="btn btn-outline-light btn-lg px-8 mb-2" onclick="next()" type="submit" name="submit" value="submit">Isave</button>
               </div>
             </div>
           </div>

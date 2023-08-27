@@ -46,56 +46,50 @@ if (!$result) {
 <body>
 
     <form action="drag.php" class="saveName" method="POST" onsubmit="saveQuizResults()">
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="form text-white" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
-
-            <div class="mb-md-5 mt-md-4 pb-5">
-
+    <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="form text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Pangalan</h2>
-              <p class="text-white-50 mb-5">Isulat ang iyong Pangalan!</p>
-
-         
-              <div class="form-outline form-white mb-4">
-
-              <label for="username">Pangalan:</label>
-              <input type="text" name="username" id="username" required>
-              </div> 
-
-              <div class="form-outline form-white mb-4">
-              <label for="edad">Edad:  </label>
-              <input type="number" name="edad" id="edad" required>
-              </div> 
-
-              <div class="form-outline form-white mb-4">
-              <label for="kasarian">Kasarian</label>
-              <select name="kasarian" id="kasarian">
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-              </select>
-              </div> 
-
-              <div class="form-outline form-white mb-4">
-                <label for="petsa">Date</label>
-                <input type="date" name="petsa" id="petsa" required>
+              <p class="text-white-50 mb-5">Ilagay ang iyong Pangalan!</p>
+                 <!-- Input for Pangalan (Name) -->
+                <div class="form-input-material form-white mb-2">
+                  <label for="username" class="form-label text-white">Pangalan:</label>
+                  <input type="text" name="username" id="username" class="form-control" required>
+                </div>
+                
+                <!-- Input for Edad (Age) -->
+                <div class="form-input-material form-white mb-2">
+                  <label for="edad" class="form-label text-white">Edad:</label>
+                  <input type="number" name="edad" id="edad" class="form-control" required>
+                </div>
+                
+                <!-- Select for Kasarian (Gender) -->
+                <div class="form-input-material form-white mb-2">
+                  <label for="kasarian" class="form-label text-white">Kasarian:</label>
+                  <select name="kasarian" id="kasarian" class="form-select">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <!-- Input for Petsa (Date) -->
+                <div class="fform-input-material form-white mb-2">
+                  <label for="petsa" class="form-label text-white">Date:</label>
+                  <input type="date" name="petsa" id="petsa" class="form-control" required>
+                </div>
+                
+                <button class="btn btn-outline-light btn-lg px-8 mb-2" onclick="next()" type="submit" name="submit" value="submit">Isave</button>
               </div>
-
-              <button class="btn btn-outline-light btn-lg px-5" onclick="next()" type="submit" name="submit"  value="submit">Isave</button>
-              <form action="drag.php" method="POST">
-            </form>
             </div>
-           
-
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </form>
-</section>
+  </section>
   </div>
 </div>
