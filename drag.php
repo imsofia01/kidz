@@ -68,24 +68,44 @@ $resultCheck = mysqli_num_rows($result);
         <span id="wrongCount">0</span>
     </div>
     <br>
-
         <div class="sunod-tanong-btn">
-        <button id="btn" type="button" class="btn" onclick="sunod()"> Sunod </button>
+        <button id="btn" type="button" class="btn" onclick="sunod()"> ISAVE </button>
    
       </div>
   </div>
   
+  <form action=".php" class="results" id="formData" method="POST" onsubmit="saveQuizResults()">
+        <div class="result-box custom-box hide">
+            <h1> Mga resulta ng pagsusulit </h1>
+            <table>
+                  <tr>
+                      <td> <label for="tamangSagot"> Tamang Sagot </label> </td>
+                      <td><span class="tamangSagot" id="correctCountDisplay">0</span></td>
+                  </tr>
+                  <tr>
+                      <td> <label for="malingSagot"> Maling Sagot </label> </td>
+                      <td><span class="malingSagot" id="wrongCountDisplay">0</span></td>
+                  </tr>
+                    <td> <span for="total"> Kabuoang Tama</label></td>
+                    <td><span class="total" id="totalDisplay" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="tanka" id="quizResultsInput"></span></td>
+                </tr>
+            </table>
+            <button type="button" class="btn" onclick="tryAgain()"> Subukan Ulit </button>
+            <button type="button" class="btn" onclick="backHome()"> Home </button>
+            <button type="submit" class="btn" onclick="submit()"> Save </button>  
+        </div>
+        </form>
   
 
 <!-- <script src="js/images.js"></script> -->
 <script type="text/javascript">
-
+const homeBox = document.querySelector(".home-box");
+const container =document.querySelector("#container-box-1");
 const customBox = document.querySelector(".custom-box")
 const dropNumber = document.querySelector(".tanong-bilang");
-const container =document.querySelector("#container-box-1");
-const containerBox =document.querySelector("#container-box-2");
-const homeBox = document.querySelector(".home-box");
-const quizBox = document.querySelector(".container-box");
+
+const containerBox =document.querySelector("container-box");
+const resultBox = document.querySelector(".result-box");
 const nextBtn = document.getElementById('myBtn');
 const answersIndicatorContainer = document.querySelectorAll(".sagot-indicator");
 const sagotIndicator = document.querySelector('.sagot-indicator');
@@ -178,20 +198,25 @@ droppableElements.forEach((element) => {
   }
   document.getElementById('correctCount').textContent = correctCount;
   document.getElementById('wrongCount').textContent = wrongCount;
+
+
+  // Update the displayed counts in the table
+document.getElementById('correctCountDisplay').textContent = correctCount;
+document.getElementById('wrongCountDisplay').textContent = wrongCount;
+document.getElementById('totalDisplay').textContent = correctCount + "/" + results.length;
 });
 });
 
+
 function sunod() {
-  
- 
+  // hide
     container.classList.add("hide");
-    containerBox.classList.remove("hide");
+    // show
+    resultBox.classList.remove("hide");
 
     console.log('Next button clicked!');
  
   }
-
-
 
 function simulaQuiz() {
 
@@ -201,6 +226,23 @@ function simulaQuiz() {
     container.classList.remove("hide");
 }
 
+function tryAgain(){
+    // hide the resultBox
+    resultBox.classList.add("hide");
+    // show the quizBox
+    container.classList.remove("hide");
+    resetQuiz();
+    simulaQuiz()
+
+}
+
+function backHome() {
+    // hide result box
+    resultBox.classList.add("hide");
+    // show home box
+    homeBox.classList.remove("hide");
+    resetQuiz();
+}
 
 </script>
 

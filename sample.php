@@ -58,7 +58,7 @@ $resultCheck = mysqli_num_rows($result);
         <!-- resulta ng pagsusulit -->
         <form action="quizresult.php" class="results" id="formData" method="POST" onsubmit="saveQuizResults()">
         <div class="result-box custom-box hide">
-            <h1> Assessment Result </h1>
+            <h1> Mga resulta ng pagsusulit </h1>
             <table>
                 <tr>
                     <td> <label for="total_tanong"> Bilang ng Tanong </label> </td>
