@@ -10,6 +10,7 @@
     font-family: "Poppins", sans-serif;
     outline: none;
 }
+
 body{
     margin: 0;
     font-size: 16px;
@@ -53,6 +54,11 @@ body{
 }
 
 /* instruction start */
+.home-box h1{
+    color: rgb(251, 142, 0);
+    font-family: 'Geologica';
+    font-size: 50px;
+}
 .home-box h2{
     
     font-family: 'Geologica', sans-serif;
@@ -194,7 +200,7 @@ body{
     padding-top: 4px;
 }
 .assess-box .sagot-indicator div{
-    height: 20px;
+    height: 40px;
     width: 40px;
     display: inline-block;
     background-color: #0088ff;
