@@ -28,8 +28,6 @@
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,12 +58,7 @@
       </div>
       <div class="container">
       <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i>Tanggalin </button>
-      <select name="category">
-        <option value="">All Categories</option>
-        <option value="electronics">Electronics</option>
-        <option value="clothing">Clothing</option>
-        <!-- Other category options -->
-    </select>
+      
       <div class="table-responsive">
         <table class="rwd-table table-bordered text-center">
           <tr class="bg-secondary text-white"> 

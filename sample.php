@@ -10,7 +10,6 @@ $sql = "SELECT * FROM player_name";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 
-
 }
 ?>
 
