@@ -5,18 +5,10 @@ include 'config/database.php';
 include 'config/result.php';
 include 'savenames.php';
 
-// include 'play.php';
 
 $sql = "SELECT * FROM player_name";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
-
-
-// $data = "SELECT * FROM result";
-// $resultData = mysqli_query($conn, $data);
-// $Check = mysqli_num_rows($resultData);
-
-// $conn->close();
 
 }
 ?>
@@ -25,7 +17,7 @@ $resultCheck = mysqli_num_rows($result);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
@@ -65,7 +57,7 @@ $resultCheck = mysqli_num_rows($result);
         <!-- resulta ng pagsusulit -->
         <form action="quizresult.php" class="results" id="formData" method="POST" onsubmit="saveQuizResults()">
         <div class="result-box custom-box hide">
-            <h1> Assessment Result </h1>
+            <h1> Mga resulta ng pagsusulit </h1>
             <table>
                 <tr>
                     <td> <label for="total_tanong"> Bilang ng Tanong </label> </td>
@@ -78,22 +70,22 @@ $resultCheck = mysqli_num_rows($result);
                 </tr>
                 <tr>
                     <td> <span for="total_correct"> Tamang sagot</label> </td>
-                    <td><span class="total-correct" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span></td>
+                    <td><span class="total-correct" type="hidden"  name="quiz_results" id="quizResultsInput"></span></td>
                     
                 </tr>
                 <tr>
                     <td> <label for="total_wrong"> Maling sagot </label>  </td>
-                    <td><span class="total-wrong" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span> </td>
+                    <td><span class="total-wrong" type="hidden"  name="quiz_results" id="quizResultsInput"></span> </td>
                     
                 </tr>
                 <tr>
                     <td> <label for="percentage"> Percentage </label> </td>
-                    <td><span class="percentage" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span> </td>
+                    <td><span class="percentage" type="hidden"  name="quiz_results" id="quizResultsInput"></span> </td>
                     
                 </tr>
                 <tr>
                     <td> Kabuuang sagot </td>
-                    <td><span class="total-puntos" type="hidden" <?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?> name="quiz_results" id="quizResultsInput"></span></td>
+                    <td><span class="total-puntos" type="hidden"  name="quiz_results" id="quizResultsInput"></span></td>
                     
                 </tr> 
             </table>
@@ -105,7 +97,6 @@ $resultCheck = mysqli_num_rows($result);
       
       
 <script src="js/script.js"></script>
-<!-- <script src="js/images.js"></script> -->
 
 <script> 
 

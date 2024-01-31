@@ -16,7 +16,7 @@
 	else{
 		?>
 		<script>
-			window.alert('Please check Report to Delete');
+			window.alert('Please check Result to Delete');
             window.location.href='quizresult.php'
 		</script>
 		<?php

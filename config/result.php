@@ -21,19 +21,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return false;
     }
 }
-
-// if (isset($_POST['total_tanong']) || isset($_POST['total_attempts']) || isset($_POST['total_correct'])  )
-//  {
-//     $total_tanong = $_POST['total_tanong'];
-//     $total_attempts = $_POST['total_attempts'];
-//     $total_correct = $_POST['total_correct'];
-    
-
-// // Create the SQL INSERT query
-// $Sname = "INSERT INTO player_name WHERE (total_tanong, total_attempts, total_correct) VALUES ('$total_tanong', '$total_attempts', '$total_correct')";
-// $Dataresult = mysqli_query($conn,$Sname);
-
-
-
 }
 ?>

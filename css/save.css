@@ -1,28 +1,25 @@
 body{
     margin: 0;
     font-size: 16px;
-    background-color: #360568;
+    background-color: #18c938;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 
 }
 
-.gradient-custom {
-
-background: rgb(114, 35, 189);
-background: linear-gradient(135deg, rgb(123, 46, 195), rgb(73, 21, 156));
+.form{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    
 }
+
 
 
 .saveName.hide{
     display: none;
 }
 
-@media(max-width: 767px){
-    .content .btn{
-        margin-bottom: 15px;
-    }
-    body{
-        padding: 15px;
-    }
-}
+@media (max-width: 768px) {
+    /* Adjust styles for screens smaller than 768px wide */
+    /* For example, you could reduce font sizes or adjust padding/margins */
+  }

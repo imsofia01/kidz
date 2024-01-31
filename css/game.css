@@ -1,16 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@500&family=Montserrat:wght@500;600&family=Rubik+Puddles&display=swap');
-.bg{
-    background-color: #C9A7EB;
-}
 
-
-.bg {
-    margin: 0;
-    font-family: "Lato", sans-serif;
-    background-color: #02c9e3;
-  }
 *{
     box-sizing: border-box;
     margin: 0;
@@ -18,78 +8,11 @@
     font-family: "Poppins", sans-serif;
     outline: none;
 }
-.custom-box{
 
-    max-width: 900px;
-    background-color: #93FF96;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 10px;
-    animation: fadeInRight 1s ease;
-}
-
-.custom-box::before,
-.custom-box::after{
-    content: '';
-    clear: both;
-    display: table;
-}
-
-.custom-box.hide{
-    display: none;
-}
-
-.btn{
-  padding: 15px 45px;
-  background-color: #4349a0;
-  border: none;
-  border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  display: inline-block;
-}
-
-
-.result-box{
-  text-align: center;
-}
-.result-box.hide{
-  display: none;
-}
-
-.result-box h1{
-  align-items: center;
-  font-size: 36px;
-  line-height: 42px;
-  color: #000000;
-}
-.result-box table{
-  width: 100%;
-  border-collapse: collapse;
-  margin: 30px 0;
-}
-.result-box table td{
-  border: 1px solid #000000;
-  padding: 8px 15px;
-  font-weight: 500; 
-  color: #000000;
-  width: 50%;
-  font-size: 18px;
-}
-.result-box .btn{
-  margin-right: 20px;
-}
-
-
-@media(max-width: 767px){
-    .result-box .btn{
-        margin-bottom: 15px;
-    }
-    body{
-        padding: 15px;
-    }
-}
+.bg {
+    margin: 0;
+   
+  }
 
 
 .title{
@@ -97,81 +20,310 @@
     align-items: center;
 }
 
-  .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #3C486B;
-    position: fixed;
-    height: 200%;
-    overflow: auto;
-  }
-  
-  .sidebar a {
-    display: block;
-    color: #F0F0F0;
-    padding: 16px;
-    text-decoration: none;
-  }
-   
-   
-  .sidebar a.active {
-    background-color: #023144;
-    color: rgb(255, 255, 255);
-  }
-  
-
-.sidebar a:hover:not(.logo-menu) {
-    background-color: #000000;
-    color: white;
+body {
+  padding-bottom: 30px;
+  position: relative;
+  min-height: 100%;
 }
 
-  .logo-menu {
-    background-image: url(../pics/kids.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+a {
+  transition: background 0.2s, color 0.2s;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+#wrapper {
+  padding-left: 0;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 20px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #f28a3a;
+  transition: all 0.9s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+
+.sidebar-brand {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  text-align: center;
+  padding: 20px 0;
+}
+.sidebar-brand h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  color: #fff;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 210px;
+  width: 850px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+}
+.sidebar-nav > li {
+  text-indent: 10px;
+  line-height: 42px;
+  padding: 10px 0;
+  margin: 0;
+}
+.sidebar-nav > li a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  font-size: 18px;
+}
+.sidebar-nav > li > a:hover,
+.sidebar-nav > li.active > a {
+  text-decoration: none;
+  color: #fff;
+  background: #F8BE12;
+}
+.sidebar-nav > li > a i.fa {
+  font-size: 24px;
+  width: 60px;
+}
+
+#navbar-wrapper {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+#wrapper.toggled #navbar-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+#navbar-wrapper .navbar {
+  border-width: 0 0 0 0;
+  background-color: #eee;
+  font-size: 24px;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+#navbar-wrapper .navbar a {
+  color: #757575;
+}
+#navbar-wrapper .navbar a:hover {
+  color: #F8BE12;
+}
+
+#content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+  top: 100px;
+}
+#wrapper.toggled #content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+@media (min-width: 992px) {
+  #wrapper {
+    padding-left: 250px;
+  }
+  
+  #wrapper.toggled {
+    padding-left: 80px;
+  }
+
+  #sidebar-wrapper {
+    width: 250px;
+  }
+  
+  #wrapper.toggled #sidebar-wrapper {
+    width: 60px;
+  }
+  
+  #wrapper.toggled #navbar-wrapper {
+    position: absolute;
+    margin-right: -190px;
 }
   
-  div#content {
-    color: white ;
-    margin-left: 200px;
-    padding: 0px 50px;
-    padding-top: 16px;
-    height: 260px;
-    background-color: rgb(25, 104, 135);
+  #wrapper.toggled #content-wrapper {
+    position: absolute;
+    margin-right: -190px;
   }
 
-  div.player{
-    color: white ;
-    margin-left: 200px;
-    padding: 0px 50px;
-    padding-top: 16px;
-    height: 260px;
-    background-color: rgb(25, 104, 135);
+  #navbar-wrapper {
+    position: relative;
+  }
+
+  #wrapper.toggled {
+    padding-left: 60px;
+  }
+
+  #content-wrapper {
+    position: relative;
+    top: 0;
+  }
+
+  #wrapper.toggled #navbar-wrapper,
+  #wrapper.toggled #content-wrapper {
+    position: relative;
+    margin-right: 60px;
+  }
+}
+
+@media (min-width: 2068px) and (max-width: 991px) {
+  #wrapper {
+    padding-left: 100px;
+  }
+
+  #sidebar-wrapper {
+    width: 100px;
+  }
+  
+#wrapper.toggled #navbar-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+  
+  #wrapper.toggled #content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+  }
+
+  #navbar-wrapper {
+    position: relative;
+  }
+
+  #wrapper.toggled {
+    padding-left: 250px;
+  }
+
+  #content-wrapper {
+    position: relative;
+    top: 0;
+  }
+
+  #wrapper.toggled #navbar-wrapper,
+  #wrapper.toggled #content-wrapper {
+    position: relative;
+    margin-right: 250px;
+  }
+}
+
+@media (max-width: 967px) {
+  #wrapper {
+    padding-left: 0;
+  }
+
+  #sidebar-wrapper {
+    width: 0;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 150px;
+  }
+  #wrapper.toggled #navbar-wrapper {
+    position: absolute;
+    margin-right: -250px;
+  }
+
+  #wrapper.toggled #content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+  }
+
+  #navbar-wrapper {
+    position: relative;
+  }
+
+  #wrapper.toggled {
+    padding-left: 150px;
+  }
+
+  #content-wrapper {
+    position: relative;
+    top: 0;
   }
 
 
-h1{
-    margin-left: 35%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.game a{
+  align-items: baseline;
+}
+
+.game h3{
+  
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
     
 }
 
-#controls{
-    background: rgb(25, 142, 209);
-    width: 500px;
-    height: 500px;
-    text-align: center;
-    margin-left: 20%;
-    margin-top: 5%;
-    font-family: Georgia, 'Times New Roman', Times, serif;  
+.container {
+  display: flex;
+  height: 100%;
+   
+}
+.content-box {
+    color: rgb(0, 0, 0) ;
+    height: 110vh;
+    left: 12px;
+    background-image: url(../pics/7.png);
+    background-size:cover ;
+    background-repeat: no-repeat;
+  }
+.article h1{
+
+  font-family: 'ADLaM Display', cursive;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
-#difficulty{
-    text-align: center;
+/* button */ /* CSS */
+.square_btn {
+  margin-left: 50px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 5px;
+  height: 70px;
+  width: 160px;
+  font-weight: bolder;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+  color: #FFA000;
+  background: #fff1da;
+  border-bottom: solid 9px #FFA000;
+  border-radius: 15px 15px 0 0;
+  transition: .4s;
 }
-.nav {
-    font-size: 20px; 
-    font-weight: bold;
-    padding: 2px;
+
+.square_btn:hover {
+  background: #ffc25c;
+  color: #FFF;
 }
+
+
+

@@ -5,14 +5,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   include_once "config/database.php";
 
 
-if (isset($_POST['username']) || isset($_POST['edad']) || isset($_POST['kasarian'])  )
+
+
+if (isset($_POST['username']) || isset($_POST['edad']) || isset($_POST['kasarian']) || isset($_POST['petsa'])  )
  {
     $username = $_POST['username'];
     $edad = $_POST['edad'];
     $kasarian = $_POST['kasarian'];
+    $petsa = $_POST['petsa'];
+ // Validate and convert the input date
+ $parsedDate = date_parse($petsa);
+
+ if ($parsedDate['error_count'] === 0 && checkdate($parsedDate['month'], $parsedDate['day'], $parsedDate['year'])) {
+   $validDate = $parsedDate['year'] . '-' . str_pad($parsedDate['month'], 2, '0', STR_PAD_LEFT) . '-' . str_pad($parsedDate['day'], 2, '0', STR_PAD_LEFT);
+
 
 // Create the SQL INSERT query
-$sql = "INSERT INTO player_name (username, edad, kasarian) VALUES ('$username', '$edad', '$kasarian')";
+$sql = "INSERT INTO player_name (username, edad, kasarian, petsa) VALUES ('$username', '$edad', '$kasarian', '$petsa')";
 $result = mysqli_query($conn,$sql);
 
 if (!$result) {
@@ -20,10 +29,8 @@ if (!$result) {
 }
  }
 }
-
+}
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,69 +41,64 @@ if (!$result) {
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"rel="stylesheet"/>
     <link rel="stylesheet" href="css/save.css">
-    <title>MyGame - Enter Your Name</title>
+    <title>Piliin ang Tamang Sagot</title>
 </head>
 <body>
 
-    <form action="sample.php" class="saveName" method="POST" onsubmit="saveQuizResults()">
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-dark text-white" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
-
-            <div class="mb-md-5 mt-md-4 pb-5">
-
+<form action="sample.php" class="saveName" method="POST" onsubmit="saveQuizResults()">
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="form text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Pangalan</h2>
-              <p class="text-white-50 mb-5">Isulat ang iyong Pangalan!</p>
-
-         
-              <div class="form-outline form-white mb-4">
-
-              <label for="username">Pangalan:</label>
-              <input type="text" name="username" id="username" required>
-              </div> 
-
-              <div class="form-outline form-white mb-4">
-              <label for="edad">Edad:  </label>
-              <input type="number" name="edad" id="edad" required>
-              </div> 
-
-              <div class="form-outline form-white mb-4">
-              <label for="kasarian">Kasarian</label>
-              <select name="kasarian" id="kasarian">
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-              </select>
-              </div> 
-
-              <button class="btn btn-outline-light btn-lg px-5" onclick="next()" type="submit" name="submit"  value="submit">Isave</button>
-              <form action="sample.php" method="POST">
-            </form>
+              <p class="text-white-50 mb-5">Ilagay ang iyong Pangalan!</p>
+                 <!-- Input for Pangalan (Name) -->
+                <div class="form-input-material form-white mb-2">
+                  <label for="username" class="form-label text-white">Pangalan:</label>
+                  <input type="text" name="username" id="username" class="form-control" required>
+                </div>
+                
+                <!-- Input for Edad (Age) -->
+                <div class="form-input-material form-white mb-2">
+                  <label for="edad" class="form-label text-white">Edad:</label>
+                  <input type="number" name="edad" id="edad" class="form-control" required>
+                </div>
+                
+                <!-- Select for Kasarian (Gender) -->
+                <div class="form-input-material form-white mb-2">
+                  <label for="kasarian" class="form-label text-white">Kasarian:</label>
+                  <select name="kasarian" id="kasarian" class="form-select">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <!-- Input for Petsa (Date) -->
+                <div class="fform-input-material form-white mb-2">
+                  <label for="petsa" class="form-label text-white">Date:</label>
+                  <input type="date" name="petsa" id="petsa" class="form-control" required>
+                </div>
+                
+                <button class="btn btn-outline-light btn-lg px-8 mb-2" onclick="next()" type="submit" name="submit" value="submit">Isave</button>
+              </div>
             </div>
-           
-
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </form>
-</section>
+  </section>
+</form>
+
   </div>
 </div>
 
 <script type="text/javascript">
 
-// const saveBox = document.querySelector(".saveName");
 
-// function next(){
-//    // hide quiz quiz
-//    saveBox.classList.add("hide");
-   
-// }
 
 
 </script>

@@ -12,8 +12,9 @@ $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) {
     die("Connection failed");
 }
-    echo "good";
 
+$sql = "SELECT id, username, edad, kasarian FROM gamescore";
+$result = mysqli_query($conn, $sql);
 
 
 $sql = "SELECT id, username, edad, kasarian, total_tanong, total_attempts, total_correct, total_wrong, percentage, puntos FROM player_name";
